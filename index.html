@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./style.css">
     <title>Profitov</title>
 </head>
@@ -105,9 +105,100 @@
                     </div>
                     <div class="screen__left__item">
                         <h2 class="title">ШОП</h2>
+                        <div class="shop__slider">
+                            <div class="swiper-wrapper">
+                                
+                                <div class="swiper-slide">
+                                    <div class="shop-card">
+                                        <div class="shop-card-img">
+                                            <img src="./img/shop_1.png" alt="shop_img">
+                                        </div>
+                
+                                        <div class="shop-card-details">
+                                            <p class="shop-card-price">60 000 PP</p>
+                                            <button class="shop-card-btn">+</button>
+                                        </div>
+                                    </div>
+                                </div> 
+
+                                <div class="swiper-slide"> 
+                                    <div class="shop-card">
+                                        <div class="shop-card-img">
+                                            <img src="./img/shop_2.png" alt="shop_img">
+                                        </div>
+                
+                                        <div class="shop-card-details">
+                                            <p class="shop-card-price">8 000 PP</p>
+                                            <button class="shop-card-btn">+</button>
+                                        </div>
+                                    </div>
+                                </div>   
+                                 
+                                <div class="swiper-slide"> 
+                                    <div class="shop-card">
+                                        <div class="shop-card-img">
+                                            <img src="./img/shop_3.png" alt="shop_img">
+                                        </div>
+                
+                                        <div class="shop-card-details">
+                                            <p class="shop-card-price">200 000 PP</p>
+                                            <button class="shop-card-btn">+</button>
+                                        </div>
+                                    </div>
+                                </div> 
+
+                                <div class="swiper-slide">
+                                    <div class="shop-card">
+                                        <div class="shop-card-img">
+                                            <img src="./img/shop_1.png" alt="shop_img">
+                                        </div>
+                
+                                        <div class="shop-card-details">
+                                            <p class="shop-card-price">60 000 PP</p>
+                                            <button class="shop-card-btn">+</button>
+                                        </div>
+                                    </div>
+                                </div> 
+                                                                      
+                            </div>
+                            <div class="swiper-button swiper-button-next"></div>
+                            <div class="swiper-button swiper-button-prev"></div>
+                            <div class="swiper-scrollbar"></div>
+                        </div>
                     </div>
                    </div>
-                   <div class="screen__right"></div>
+                   <div class="screen__right">
+                    <h2 class="title">колесо фортуны</h2>
+                    <div class="deal-wheel">
+                        <ul class="spinner"></ul>
+                        <figure class="cap">
+                            <button class="btn-spin"><img src="img/spinn_b.svg" alt="" width="32" height="38"></button>
+                        </figure>
+                        <div class="ticker"></div>
+                
+                        <!-- Thanks popup  success-->
+                
+                        <div class="popup-thanks">
+                            <div class="popup-dialog">
+                                <div class="popup-content">
+                                    <div class="popup-body">
+                                        <div class="popup__title">
+                                            <div class="popup__close-thanks"><span class="close-icon">&times;</span></div>
+                                        </div>
+                
+                                        <div class="popup__text">
+                                            <p><b>Вітаємо!</b><br />
+                                                Ваша знижка: <span id="cupon"></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div>
+                    <button class="custom-button">Ежедневный профит</button>
+                    <div class="timer">23:00</div>
+                   </div>
                 </div>
                 
             </section>
@@ -119,7 +210,7 @@
             <div class="sign-up_popup-dialog">
                 <div class="sign-up_popup-content">
                     <div class="sign-up_popup-header">
-                        <h2 class="sign-up_popup-title">Регистрация</h2>
+                        <h2 class="sign-up_popup-title">мой аккаунт</h2>
                         <svg class="close_popup" width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M33.4064 11L23 21.4113L12.5936 11L11 12.5839L21.4119 23.0002L11 33.4169L12.5936 35L23 24.589L33.4064 35L35 33.4169L24.5881 23.0002L35 12.5839L33.4064 11Z" fill="#303030"/>
                             <circle cx="22.5" cy="22.5" r="21.5" stroke="#303030" stroke-width="2"/>
@@ -159,7 +250,7 @@
 
     </div>
     <script src="./lib/jquery.min.js"></script>
-    <!-- <script src="./lib/wow.min.js"></script> -->
+    <script src="./lib/swiper/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
 
 </body>
