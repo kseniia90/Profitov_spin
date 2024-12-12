@@ -26,7 +26,7 @@
                             <div class="header-left">
                                 <button class="custom-button">PP Coins: 100</button>
                                 <button class="custom-button">Кошелек: 1000</button>
-                                <button class="custom-button btn-icon transparent sign-up-btn">😈</button>
+                                <button class="custom-button btn-icon transparent account-btn">😈</button>
                                 <button class="custom-button btn-icon transparent">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <mask id="mask0_1_120" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
@@ -205,43 +205,63 @@
            
         </main>
 
-        <!-- sign-up popup -->
-        <div class="sign-up_popup">
-            <div class="sign-up_popup-dialog">
-                <div class="sign-up_popup-content">
-                    <div class="sign-up_popup-header">
-                        <h2 class="sign-up_popup-title">мой аккаунт</h2>
-                        <svg class="close_popup" width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M33.4064 11L23 21.4113L12.5936 11L11 12.5839L21.4119 23.0002L11 33.4169L12.5936 35L23 24.589L33.4064 35L35 33.4169L24.5881 23.0002L35 12.5839L33.4064 11Z" fill="#303030"/>
-                            <circle cx="22.5" cy="22.5" r="21.5" stroke="#303030" stroke-width="2"/>
+        <!-- account popup -->
+        <div class="popup account_popup">
+            <div class="popup-dialog account_popup-dialog">
+                <div class="popup-content account_popup-content">
+                    <div class="popup-header account_popup-header">
+                        <h2 class="popup-title account_popup-title">мой аккаунт</h2>
+                        <svg class="close_popup"  width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_1_788" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                            <rect width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_1_788)">
+                            <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" fill="white"/>
+                            </g>
                         </svg>
                     </div>
-                    <div class="sign-up_popup-body">
-                        <form class="sign-up__form">
-                            <div class="sign-up__form__inputs-block">
-                                <div class="input-block">
-                                    <label for="user_email">Почта</label>
-                                    <input type="text" id="user_email" name="user_email" placeholder="Email">
-                                </div>
-                                <div class="input-block">
-                                    <label for="user_password">Пароль</label>
-                                    <input type="password" id="user_password" name="user_epassword" placeholder="Пароль">
-                                </div>
-                                <div class="input-block">
-                                    <label for="user_password_repeat">Подтвердить пароль</label>
-                                    <input type="password" id="user_password_repeat" name="user_password_repeat" placeholder="Подтвердить">
-                                </div>
-                                <div class="input-block">
-                                    <label for="user_messenger">Telegram/Skype</label>
-                                    <input type="text" id="user_messenger" name="user_messenger" placeholder="@">
-                                </div>
-                                <div class="input-block">
-                                    <label for="user_message">Откуда узнали о нас?</label>
-                                    <textarea name="user_message" id="user_message" cols="10" rows="3" placeholder="Расскажи, откуда узнали о нас?"></textarea>
-                                </div>
+                    <div class="popup-body account_popup-body">
+
+                        <div class="tab">
+                            <button class="tablinks active" onclick="openOption(event, 'my-info')">Моя инфа</button>
+                            <button class="tablinks" onclick="openOption(event, 'my-orders')">Мои заказы</button>
+                            <button class="tablinks" onclick="openOption(event, 'my-history')">история</button>
+                            <button class="tablinks" onclick="openOption(event, 'log-out')">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_1_866" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                        <rect width="24" height="24" fill="#D9D9D9" />
+                                    </mask>
+                                    <g mask="url(#mask0_1_866)">
+                                        <path
+                                            d="M20.15 13H8V11H20.15L18.6 9.45L20 8L24 12L20 16L18.6 14.55L20.15 13ZM15 9V5H5V19H15V15H17V19C17 19.55 16.8042 20.0208 16.4125 20.4125C16.0208 20.8042 15.55 21 15 21H5C4.45 21 3.97917 20.8042 3.5875 20.4125C3.19583 20.0208 3 19.55 3 19V5C3 4.45 3.19583 3.97917 3.5875 3.5875C3.97917 3.19583 4.45 3 5 3H15C15.55 3 16.0208 3.19583 16.4125 3.5875C16.8042 3.97917 17 4.45 17 5V9H15Z"
+                                            fill="white" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div id="my-info" class="tabcontent" style="display: block;">
+                            <div class="my-info__content">
+                                <form class="my-info__form">
+                                    <input type="text" name="user_name" placeholder="Имя">
+                                    <input type="text" name="user_last-name" placeholder="Фамилия">
+                                </form>
+                                <p>E-mail: pochta@gmail.com</p>
                             </div>
-                            <button class="custom-button transparent sign-up_popup-btn ">Зарегистрироваться</button>
-                        </form>
+                        </div>
+
+                        <div id="my-orders" class="tabcontent">
+                           
+                        </div>
+
+                        <div id="my-history" class="tabcontent">
+                           
+                        </div>
+
+                        <div id="log-out" aria-checked="tabcontent">
+                            
+                        </div>
+                        
                     </div>
                 </div>
             </div>

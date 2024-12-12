@@ -1,23 +1,23 @@
 "use strict";
 
-// sign-up popup 
+// account popup 
 
-if(document.querySelector('.sign-up_popup') !== null) {
+if(document.querySelector('.account_popup') !== null) {
 
-  document.querySelectorAll('.sign-up-btn').forEach(function(button) {
+  document.querySelectorAll('.account-btn').forEach(function(button) {
     button.addEventListener('click', function (e) {
       e.preventDefault();
       document.body.style.overflow = 'hidden';
-      document.querySelector('.sign-up_popup').classList.add('active');
+      document.querySelector('.account_popup').classList.add('active');
     });
   })
-  document.querySelector('.sign-up_popup-content').addEventListener('click', function (e) {
+  document.querySelector('.account_popup-content').addEventListener('click', function (e) {
     e.stopPropagation();
   });
   
-  document.querySelector('.sign-up_popup .close_popup').addEventListener('click', function (e) {
+  document.querySelector('.account_popup .close_popup').addEventListener('click', function (e) {
     document.body.style.overflow = 'visible';
-    document.querySelector('.sign-up_popup').classList.remove('active');
+    document.querySelector('.account_popup').classList.remove('active');
   });
 }
 
@@ -208,3 +208,24 @@ if (document.querySelector(".popup-thanks") !== null) {
 setupWheel();
 
 //wheel end
+
+
+// tab
+
+function openOption(evt, optionName) {
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(optionName).style.display = "block";
+  evt.currentTarget.className += " active";
+
+}

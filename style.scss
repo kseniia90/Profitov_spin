@@ -335,9 +335,11 @@ header, footer {
 
 .shop__slider .swiper-wrapper {
     max-width: 640px;
+    border: 1px solid red;
 }
 
 .shop__slider .swiper-slide {
+    max-width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -655,14 +657,7 @@ header, footer {
 
 /*popup end*/
 
-
-
-
-
-
-
-
-.sign-up_popup {
+.popup {
     position: fixed; 
     top: 0;
     right: 0;
@@ -682,17 +677,12 @@ header, footer {
     }
     &-dialog {
         position: relative;
+        width: 100%;
         max-width: 640px;
         margin: 150px auto 20px;
         height: calc(100% - 170px);
-        // @media (max-width: $width1600) {
-        //    max-width: 623px;          
-        // }
-        // @media (max-width: $tablet) {
-        //     max-width: 480px;           
-        // }
         @media (max-width:$mobile) {
-            max-width: 100%;
+            max-width: calc(100% - 30px);
             margin: 0 auto;
         }
     }
@@ -700,24 +690,23 @@ header, footer {
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: 24px;
-        background-color: #000;
-        border-radius: 14px;
-        padding: 48px 48px 88px;
+        gap: 30px;
+        background-color: #2C2B2D;
+        border-radius: 20px;
+        padding: 40px 20px;
         outline: 0; 
-        @media (max-width: $width1600) {
-            gap: 16px;      
-        }  
+        border: 1px solid #4F4F4F;
+        border: 1px solid red; 
         @media (max-width:$mobile) {
-            padding: 48px 25px;
+            gap: 20px;
         }
     }
-    &-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    &-title {
         font-family: $font-benzin;
-       
+        font-size: 24px;
+        line-height: normal;
+        text-align: center;
+        text-transform: uppercase;
     }
     &-body {
         @include flex(flex-start, center, column);
@@ -725,8 +714,37 @@ header, footer {
         flex: 1 1 auto;   
         text-align: center;   
         height: 100%;       
-    } 
-    .sign-up__form {
+    }  
+}
+
+.close_popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.close_popup {
+    path, circle {
+        stroke:#303030;
+        transition: all 0.3s ease;
+    }
+    &:hover {
+        path, circle {
+            stroke:#e5e5e5;
+        }
+    }
+}
+
+.account_popup {
+
+    &-dialog {
+        max-width: 640px;
+    }
+ 
+    .my-info__form {
         @include flex(flex-start, stretch, column);
         gap: 24px;
         width: 100%;
@@ -787,35 +805,62 @@ header, footer {
     } 
 }
 
-.sign-up_popup-title {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 46px;
-    @media (max-width: $tablet) {
-        font-size: 24px;
-        line-height: 28px;           
-    }
-}
-.close_popup {
-    cursor: pointer;
-    width: 45px;
-    height: 45px;
-    @media (max-width: $tablet) {
-        width: 26px;
-        height: 26px;          
-    }
+.popup-body .tab {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	flex-direction: row;
+	gap: 10px;
+    border: 1px solid red;
 }
 
-.close_popup {
-    path, circle {
-        stroke:#303030;
-        transition: all 0.3s ease;
-    }
-    &:hover {
-        path, circle {
-            stroke:#e5e5e5;
-        }
-    }
+.popup-body .tab button {
+	background-color: inherit;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 10px;
+	transition: all 0.3s ease;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: normal;
+	opacity: 0.4;
+	white-space: nowrap;
+	color: inherit !important;
+}
+
+@media (min-width: 769px) {
+
+	.popup-body .tab button:hover {
+		color: var(--accent) !important;
+		opacity: 1;
+	}
+	
+}
+
+.popup-body .tab button.active {
+	border-top: 1px solid var(--accent);
+	border-bottom: 1px solid var(--accent);
+	opacity: 1;
+}
+
+.popup-body .tabcontent {
+	display: none;
+	padding: 40px 0 0;
+	border-top: none;
+	width: 100%;
+}
+
+@media (max-width: 768px) {
+	.popup-body .tab {
+		gap: 16px;
+	}
+
+	.popup-body .tab button {
+		font-size: 16px;
+		line-height: 23px;
+	}
 }
 
 
