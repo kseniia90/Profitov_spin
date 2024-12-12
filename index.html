@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./lib/owlcarousel/styles/owl.carousel.min.css">
+    <link rel="stylesheet" href="./lib/owlcarousel/styles/owl.theme.default.min.css">
     <link rel="stylesheet" href="./style.css">
     <title>Profitov</title>
 </head>
@@ -28,181 +29,208 @@
                                 <button class="custom-button">Кошелек: 1000</button>
                                 <button class="custom-button btn-icon transparent account-btn">😈</button>
                                 <button class="custom-button btn-icon transparent">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <mask id="mask0_1_120" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                                        <rect width="24" height="24" fill="#D9D9D9"/>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="mask0_1_120" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                            y="0" width="24" height="24">
+                                            <rect width="24" height="24" fill="#D9D9D9" />
                                         </mask>
                                         <g mask="url(#mask0_1_120)">
-                                        <path d="M7 22C6.45 22 5.97917 21.8042 5.5875 21.4125C5.19583 21.0208 5 20.55 5 20C5 19.45 5.19583 18.9792 5.5875 18.5875C5.97917 18.1958 6.45 18 7 18C7.55 18 8.02083 18.1958 8.4125 18.5875C8.80417 18.9792 9 19.45 9 20C9 20.55 8.80417 21.0208 8.4125 21.4125C8.02083 21.8042 7.55 22 7 22ZM17 22C16.45 22 15.9792 21.8042 15.5875 21.4125C15.1958 21.0208 15 20.55 15 20C15 19.45 15.1958 18.9792 15.5875 18.5875C15.9792 18.1958 16.45 18 17 18C17.55 18 18.0208 18.1958 18.4125 18.5875C18.8042 18.9792 19 19.45 19 20C19 20.55 18.8042 21.0208 18.4125 21.4125C18.0208 21.8042 17.55 22 17 22ZM6.15 6L8.55 11H15.55L18.3 6H6.15ZM5.2 4H19.95C20.3333 4 20.625 4.17083 20.825 4.5125C21.025 4.85417 21.0333 5.2 20.85 5.55L17.3 11.95C17.1167 12.2833 16.8708 12.5417 16.5625 12.725C16.2542 12.9083 15.9167 13 15.55 13H8.1L7 15H19V17H7C6.25 17 5.68333 16.6708 5.3 16.0125C4.91667 15.3542 4.9 14.7 5.25 14.05L6.6 11.6L3 4H1V2H4.25L5.2 4Z" fill="white"/>
+                                            <path
+                                                d="M7 22C6.45 22 5.97917 21.8042 5.5875 21.4125C5.19583 21.0208 5 20.55 5 20C5 19.45 5.19583 18.9792 5.5875 18.5875C5.97917 18.1958 6.45 18 7 18C7.55 18 8.02083 18.1958 8.4125 18.5875C8.80417 18.9792 9 19.45 9 20C9 20.55 8.80417 21.0208 8.4125 21.4125C8.02083 21.8042 7.55 22 7 22ZM17 22C16.45 22 15.9792 21.8042 15.5875 21.4125C15.1958 21.0208 15 20.55 15 20C15 19.45 15.1958 18.9792 15.5875 18.5875C15.9792 18.1958 16.45 18 17 18C17.55 18 18.0208 18.1958 18.4125 18.5875C18.8042 18.9792 19 19.45 19 20C19 20.55 18.8042 21.0208 18.4125 21.4125C18.0208 21.8042 17.55 22 17 22ZM6.15 6L8.55 11H15.55L18.3 6H6.15ZM5.2 4H19.95C20.3333 4 20.625 4.17083 20.825 4.5125C21.025 4.85417 21.0333 5.2 20.85 5.55L17.3 11.95C17.1167 12.2833 16.8708 12.5417 16.5625 12.725C16.2542 12.9083 15.9167 13 15.55 13H8.1L7 15H19V17H7C6.25 17 5.68333 16.6708 5.3 16.0125C4.91667 15.3542 4.9 14.7 5.25 14.05L6.6 11.6L3 4H1V2H4.25L5.2 4Z"
+                                                fill="white" />
                                         </g>
-                                        </svg>                                        
+                                    </svg>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </header>
-               
+
                 <div class="screen__content container">
-                   <div class="screen__left">
-                    <div class="screen__left__item item1">
-                        <h1 class="title">Скажи Спасибо</h1>
-                        <form action="" class="item-form">
-                            <ul class="area1">
-                                <li>
-                                    <input type="radio" id="person_1" name="selector">
-                                    <label for="person_1">Аня</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="person_2" name="selector">
-                                    <label for="person_2">Ваня</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="person_3" name="selector">
-                                    <label for="person_3">Арнольд</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="person_4" name="selector">
-                                    <label for="person_4">Ким</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="person_5" name="selector">
-                                    <label for="person_5">Ваня</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="person_6" name="selector">
-                                    <label for="person_6">Аня</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="person_7" name="selector">
-                                    <label for="person_7">Арнольд</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="person_8" name="selector">
-                                    <label for="person_8">Ким</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="person_9" name="selector">
-                                    <label for="person_9">Ваня</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="person_10" name="selector">
-                                    <label for="person_10">Аня</label>
-                                </li>
-                            </ul>
-                            <div class="area2">
-                                <select name="" id="">
-                                    <option value="" disabled selected>За что благодарность?</option>
-                                    <option value="">Option1</option>
-                                    <option value="">Option1</option>
-                                    <option value="">Option1</option>
-                                    <option value="">Option1</option>
-                                    <option value="">Option1</option>
-                                    <option value="">Option1</option>
-                                </select>
-                            </div>
-                            <textarea class="area3" rows="4" cols="50" placeholder="Обязательный текст"></textarea>                            <button type="submit" class="area4 custom-button">Отправить</button>
-                        </form>
-                    </div>
-                    <div class="screen__left__item">
-                        <h2 class="title">ШОП</h2>
-                        <div class="shop__slider">
-                            <div class="swiper-wrapper">
-                                
-                                <div class="swiper-slide">
-                                    <div class="shop-card">
-                                        <div class="shop-card-img">
-                                            <img src="./img/shop_1.png" alt="shop_img">
-                                        </div>
-                
-                                        <div class="shop-card-details">
-                                            <p class="shop-card-price">60 000 PP</p>
-                                            <button class="shop-card-btn">+</button>
-                                        </div>
-                                    </div>
-                                </div> 
+                    <div class="screen__left">
+                        <div class="screen__left__item item1">
+                            <h1 class="title">Скажи Спасибо</h1>
+                            <form action="" class="item-form">
+                                <ul class="area1">
+                                    <li>
+                                        <input type="radio" id="person_1" name="selector">
+                                        <label for="person_1">Аня</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="person_2" name="selector">
+                                        <label for="person_2">Ваня</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="person_3" name="selector">
+                                        <label for="person_3">Арнольд</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="person_4" name="selector">
+                                        <label for="person_4">Ким</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="person_5" name="selector">
+                                        <label for="person_5">Ваня</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="person_6" name="selector">
+                                        <label for="person_6">Аня</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="person_7" name="selector">
+                                        <label for="person_7">Арнольд</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="person_8" name="selector">
+                                        <label for="person_8">Ким</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="person_9" name="selector">
+                                        <label for="person_9">Ваня</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="person_10" name="selector">
+                                        <label for="person_10">Аня</label>
+                                    </li>
+                                </ul>
+                                <div class="area2">
+                                    <select name="" id="">
+                                        <option value="" disabled selected>За что благодарность?</option>
+                                        <option value="">Option1</option>
+                                        <option value="">Option1</option>
+                                        <option value="">Option1</option>
+                                        <option value="">Option1</option>
+                                        <option value="">Option1</option>
+                                        <option value="">Option1</option>
+                                    </select>
+                                </div>
+                                <textarea class="area3" rows="4" cols="50" placeholder="Обязательный текст"></textarea>
+                                <button type="submit" class="area4 custom-button">Отправить</button>
+                            </form>
+                        </div>
+                        <div class="screen__left__item">
+                            <h2 class="title">ШОП</h2>
 
-                                <div class="swiper-slide"> 
-                                    <div class="shop-card">
-                                        <div class="shop-card-img">
-                                            <img src="./img/shop_2.png" alt="shop_img">
-                                        </div>
-                
-                                        <div class="shop-card-details">
-                                            <p class="shop-card-price">8 000 PP</p>
-                                            <button class="shop-card-btn">+</button>
-                                        </div>
-                                    </div>
-                                </div>   
-                                 
-                                <div class="swiper-slide"> 
-                                    <div class="shop-card">
-                                        <div class="shop-card-img">
-                                            <img src="./img/shop_3.png" alt="shop_img">
-                                        </div>
-                
-                                        <div class="shop-card-details">
-                                            <p class="shop-card-price">200 000 PP</p>
-                                            <button class="shop-card-btn">+</button>
-                                        </div>
-                                    </div>
-                                </div> 
+                            <div class="show__slider">
+                                <div class="show__slider__btn show__slider__btn-prev">
+                                    <button class=" show__prev-slide" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask0_1_92" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                            <rect width="24" height="24" fill="#D9D9D9"/>
+                                            </mask>
+                                            <g mask="url(#mask0_1_92)">
+                                            <path d="M16 22L6 12L16 2L17.775 3.775L9.55 12L17.775 20.225L16 22Z" fill="white"/>
+                                            </g>
+                                        </svg>
+                                            
+                                    </button>
+                                </div>
+                                <div class="show-carousel owl-carousel owl-theme show__slider__body">
 
-                                <div class="swiper-slide">
-                                    <div class="shop-card">
-                                        <div class="shop-card-img">
-                                            <img src="./img/shop_1.png" alt="shop_img">
-                                        </div>
-                
-                                        <div class="shop-card-details">
-                                            <p class="shop-card-price">60 000 PP</p>
-                                            <button class="shop-card-btn">+</button>
+                                    <div class="slide-item">
+                                        <div class="shop-card">
+                                            <div class="shop-card-img">
+                                                <img src="./img/shop_1.png" alt="shop_img">
+                                            </div>
+
+                                            <div class="shop-card-details">
+                                                <p class="shop-card-price">60 000 PP</p>
+                                                <button class="shop-card-btn">+</button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div> 
-                                                                      
+
+                                    <div class="slide-item">
+                                        <div class="shop-card">
+                                            <div class="shop-card-img">
+                                                <img src="./img/shop_2.png" alt="shop_img">
+                                            </div>
+
+                                            <div class="shop-card-details">
+                                                <p class="shop-card-price">8 000 PP</p>
+                                                <button class="shop-card-btn">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="slide-item">
+                                        <div class="shop-card">
+                                            <div class="shop-card-img">
+                                                <img src="./img/shop_3.png" alt="shop_img">
+                                            </div>
+
+                                            <div class="shop-card-details">
+                                                <p class="shop-card-price">200 000 PP</p>
+                                                <button class="shop-card-btn">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="slide-item">
+                                        <div class="shop-card">
+                                            <div class="shop-card-img">
+                                                <img src="./img/shop_1.png" alt="shop_img">
+                                            </div>
+
+                                            <div class="shop-card-details">
+                                                <p class="shop-card-price">60 000 PP</p>
+                                                <button class="shop-card-btn">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="show__slider__btn show__slider__btn-next">
+                                    <button class=" show__next-slide" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask0_1_95" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                            <rect x="24" y="24" width="24" height="24" transform="rotate(-180 24 24)" fill="#D9D9D9"/>
+                                            </mask>
+                                            <g mask="url(#mask0_1_95)">
+                                            <path d="M8 2L18 12L8 22L6.225 20.225L14.45 12L6.225 3.775L8 2Z" fill="white"/>
+                                            </g>
+                                        </svg>    
+                                    </button>
+                                </div>
                             </div>
-                            <div class="swiper-button swiper-button-next"></div>
-                            <div class="swiper-button swiper-button-prev"></div>
-                            <div class="swiper-scrollbar"></div>
                         </div>
                     </div>
-                   </div>
-                   <div class="screen__right">
-                    <h2 class="title">колесо фортуны</h2>
-                    <div class="deal-wheel">
-                        <ul class="spinner"></ul>
-                        <figure class="cap">
-                            <button class="btn-spin"><img src="img/spinn_b.svg" alt="" width="32" height="38"></button>
-                        </figure>
-                        <div class="ticker"></div>
-                
-                        <!-- Thanks popup  success-->
-                
-                        <div class="popup-thanks">
-                            <div class="popup-dialog">
-                                <div class="popup-content">
-                                    <div class="popup-body">
-                                        <div class="popup__title">
-                                            <div class="popup__close-thanks"><span class="close-icon">&times;</span></div>
-                                        </div>
-                
-                                        <div class="popup__text">
-                                            <p><b>Вітаємо!</b><br />
-                                                Ваша знижка: <span id="cupon"></span></p>
+                    <div class="screen__right">
+                        <h2 class="title">колесо фортуны</h2>
+                        <div class="deal-wheel">
+                            <ul class="spinner"></ul>
+                            <figure class="cap">
+                                <button class="btn-spin"><img src="img/spinn_b.svg" alt="" width="32"
+                                        height="38"></button>
+                            </figure>
+                            <div class="ticker"></div>
+
+                            <!-- Thanks popup  success-->
+
+                            <div class="popup-thanks">
+                                <div class="popup-dialog">
+                                    <div class="popup-content">
+                                        <div class="popup-body">
+                                            <div class="popup__title">
+                                                <div class="popup__close-thanks"><span class="close-icon">&times;</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="popup__text">
+                                                <p><b>Вітаємо!</b><br />
+                                                    Ваша знижка: <span id="cupon"></span></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
-                
+                        <button class="custom-button">Ежедневный профит</button>
+                        <div class="timer">23:00</div>
                     </div>
-                    <button class="custom-button">Ежедневный профит</button>
-                    <div class="timer">23:00</div>
-                   </div>
                 </div>
-                
             </section>
-           
         </main>
 
         <!-- account popup -->
@@ -211,12 +239,16 @@
                 <div class="popup-content account_popup-content">
                     <div class="popup-header account_popup-header">
                         <h2 class="popup-title account_popup-title">мой аккаунт</h2>
-                        <svg class="close_popup"  width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <mask id="mask0_1_788" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                            <rect width="24" height="24" fill="#D9D9D9"/>
+                        <svg class="close_popup" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_1_788" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9" />
                             </mask>
                             <g mask="url(#mask0_1_788)">
-                            <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" fill="white"/>
+                                <path
+                                    d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                                    fill="white" />
                             </g>
                         </svg>
                     </div>
@@ -227,8 +259,10 @@
                             <button class="tablinks" onclick="openOption(event, 'my-orders')">Мои заказы</button>
                             <button class="tablinks" onclick="openOption(event, 'my-history')">история</button>
                             <button class="tablinks" onclick="openOption(event, 'log-out')">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <mask id="mask0_1_866" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_1_866" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="24" height="24">
                                         <rect width="24" height="24" fill="#D9D9D9" />
                                     </mask>
                                     <g mask="url(#mask0_1_866)">
@@ -251,26 +285,73 @@
                         </div>
 
                         <div id="my-orders" class="tabcontent">
-                           
+                            <div class="my-orders__content">
+
+                                <div class="my-orders__item">
+                                    <div class="table-row table-head">
+                                        <p class="table-col">MacBook PRO 15”</p>
+                                    </div>
+                                    <div class="table-row">
+                                        <p class="table-col">№ заказа:</p>
+                                        <p class="table-col">999</p>
+                                    </div>
+                                    <div class="table-row">
+                                        <p class="table-col">Сумма:</p>
+                                        <p class="table-col">10 000 РР</p>
+                                    </div>
+                                    <div class="table-row">
+                                        <p class="table-col">Дата:</p>
+                                        <p class="table-col">19.11.2024</p>
+                                    </div>
+                                    <div class="table-row">
+                                        <p class="table-col">Комментарий:</p>
+                                        <p class="table-col">Спасибо блин большое ваще) я в ахуе реально! Респектую выше
+                                            гор держи макбук в подарок от меня) </p>
+                                    </div>
+                                </div>
+
+                                <div class="my-orders__item">
+                                    <div class="table-row table-head">
+                                        <p class="table-col">Мыло Dove</p>
+                                    </div>
+                                    <div class="table-row">
+                                        <p class="table-col">№ заказа:</p>
+                                        <p class="table-col">9969</p>
+                                    </div>
+                                    <div class="table-row">
+                                        <p class="table-col">Сумма:</p>
+                                        <p class="table-col">1 000 РР</p>
+                                    </div>
+                                    <div class="table-row">
+                                        <p class="table-col">Дата:</p>
+                                        <p class="table-col">19.11.2024</p>
+                                    </div>
+                                    <div class="table-row">
+                                        <p class="table-col">Комментарий:</p>
+                                        <p class="table-col">Так неожиданно и приятно.</p>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
 
                         <div id="my-history" class="tabcontent">
-                           
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus ducimus ratione,
+                                voluptates voluptas molestias at quo sunt nulla animi laudantium dignissimos ea nesciunt
+                                officia fugiat expedita. Porro quo amet fuga.</p>
                         </div>
 
                         <div id="log-out" aria-checked="tabcontent">
-                            
+
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
     <script src="./lib/jquery.min.js"></script>
-    <script src="./lib/swiper/swiper-bundle.min.js"></script>
+    <script src="./lib/owlcarousel/js/owl.carousel.min.js"></script>
     <script src="./js/main.js"></script>
 
 </body>

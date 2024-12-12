@@ -1,91 +1,80 @@
 "use strict";
 
-// account popup 
+// account popup
 
-if(document.querySelector('.account_popup') !== null) {
-
-  document.querySelectorAll('.account-btn').forEach(function(button) {
-    button.addEventListener('click', function (e) {
+if (document.querySelector(".account_popup") !== null) {
+  document.querySelectorAll(".account-btn").forEach(function (button) {
+    button.addEventListener("click", function (e) {
       e.preventDefault();
-      document.body.style.overflow = 'hidden';
-      document.querySelector('.account_popup').classList.add('active');
+      document.body.style.overflow = "hidden";
+      document.querySelector(".account_popup").classList.add("active");
     });
-  })
-  document.querySelector('.account_popup-content').addEventListener('click', function (e) {
-    e.stopPropagation();
   });
-  
-  document.querySelector('.account_popup .close_popup').addEventListener('click', function (e) {
-    document.body.style.overflow = 'visible';
-    document.querySelector('.account_popup').classList.remove('active');
-  });
+  document
+    .querySelector(".account_popup-content")
+    .addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+
+  document
+    .querySelector(".account_popup .close_popup")
+    .addEventListener("click", function (e) {
+      document.body.style.overflow = "visible";
+      document.querySelector(".account_popup").classList.remove("active");
+    });
 }
 
-var swiperOurWorks = new Swiper(".shop__slider", {
-  freeMode: true,
-  loop: true,
-  // slidesPerView: 3,
-  navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-  },
-
-  scrollbar: {
-      el: ".swiper-scrollbar",
-      hide: true,
-  },
-  breakpoints: {
-      0: {
-          slidesPerView: "auto",
-          centeredSlides: true,
-          spaceBetween: 15,
-      },
-      768: {
-          slidesPerView: 2,
-          spaceBetween: 15,   
-      },
-      1024: {
-          slidesPerView: 3,
-          spaceBetween: 18,
-      },
-  },
+$(function () {
+  // slider reviews
+  var owl = $(".show-carousel").owlCarousel({
+    dots: false,
+    loop: true,
+    items: 3,
+    margin: 18,
+  });
+  $(".show__next-slide").click(function () {
+    owl.trigger("next.owl.carousel");
+  });
+  $(".show__prev-slide").click(function () {
+    owl.trigger("prev.owl.carousel");
+  });
 });
 
 // wheel start
 
 const prizes = [
   {
-      text: "1",
-      color: "#1c1b1c"
+    text: "1",
+    color: "#1c1b1c",
   },
   {
-      text: "2",
-      color: "#520b9a"
+    text: "2",
+    color: "#520b9a",
   },
   {
-      text: "3",
-      color: "#1c1b1c"
+    text: "3",
+    color: "#1c1b1c",
   },
   {
-      text: "4",
-      color: "#520b9a"
+    text: "4",
+    color: "#520b9a",
   },
   {
-      text: "5",
-      color: "#1c1b1c"
+    text: "5",
+    color: "#1c1b1c",
   },
   {
-      text: "6",
-      color: "#520b9a"
+    text: "6",
+    color: "#520b9a",
   },
   {
-      text: "7",
-      color: "#1c1b1c"
+    text: "7",
+    color: "#1c1b1c",
   },
   {
-      text: "10",
-      color: "#520b9a"
-  }
+    text: "10",
+    color: "#520b9a",
+  },
 ];
 
 const wheel = document.querySelector(".deal-wheel");
@@ -105,22 +94,25 @@ let prizeNodes;
 
 const createPrizeNodes = () => {
   prizes.forEach(({ text, color }, i) => {
-      const rotation = ((prizeSlice * i) * -1) - prizeOffset;
-      spinner.insertAdjacentHTML(
-          "beforeend",
-          `<li class="prize" style="--rotate: ${rotation}deg"><span class="text">${text}</span></li>`
-      );
+    const rotation = prizeSlice * i * -1 - prizeOffset;
+    spinner.insertAdjacentHTML(
+      "beforeend",
+      `<li class="prize" style="--rotate: ${rotation}deg"><span class="text">${text}</span></li>`
+    );
   });
 };
 
 const createConicGradient = () => {
   spinner.setAttribute(
-      "style",`background: conic-gradient( from -90deg,${prizes.map(({ color }, i) => `${color} 0 ${(100 / prizes.length) * (prizes.length - i)}%`)
-          .reverse()
-      });`
+    "style",
+    `background: conic-gradient( from -90deg,${prizes
+      .map(
+        ({ color }, i) =>
+          `${color} 0 ${(100 / prizes.length) * (prizes.length - i)}%`
+      )
+      .reverse()});`
   );
 };
-
 
 const setupWheel = () => {
   createConicGradient();
@@ -140,15 +132,15 @@ const runTickerAnimation = () => {
   const b = values[1];
   let rad = Math.atan2(b, a);
 
-  if (rad < 0) rad += (2 * Math.PI);
+  if (rad < 0) rad += 2 * Math.PI;
 
   const angle = Math.round(rad * (180 / Math.PI));
   const slice = Math.floor(angle / prizeSlice);
 
   if (currentSlice !== slice) {
-      ticker.style.animation = "none";
-      setTimeout(() => ticker.style.animation = null, 10);
-      currentSlice = slice;
+    ticker.style.animation = "none";
+    setTimeout(() => (ticker.style.animation = null), 10);
+    currentSlice = slice;
   }
 
   tickerAnim = requestAnimationFrame(runTickerAnimation);
@@ -157,9 +149,10 @@ const runTickerAnimation = () => {
 const selectPrize = () => {
   const selected = Math.floor(rotation / prizeSlice);
   prizeNodes[selected].classList.add(selectedClass);
-  document.getElementById('cupon').innerHTML = prizeNodes[selected].querySelector('.text').innerHTML;
+  document.getElementById("cupon").innerHTML =
+    prizeNodes[selected].querySelector(".text").innerHTML;
   setTimeout(() => {
-      document.querySelector('.popup-thanks').classList.add('active');
+    document.querySelector(".popup-thanks").classList.add("active");
   }, "2000");
 };
 
@@ -183,32 +176,29 @@ spinner.addEventListener("transitionend", () => {
   spinner.style.setProperty("--rotate", rotation);
 });
 
-const showPopup = () => {
-  
-}
-
+const showPopup = () => {};
 
 if (document.querySelector(".popup-thanks") !== null) {
-
   window.addEventListener("click", function (e) {
+    if (e.target.closest(".popup__close-thanks")) {
+      e.preventDefault();
+      document.querySelector(".popup-thanks").classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
 
-      if (e.target.closest('.popup__close-thanks')) {
-          e.preventDefault();
-          document.querySelector(".popup-thanks").classList.remove("active");
-          document.body.style.overflow = "auto";
-      }
-
-      if (document.querySelector(".popup-thanks.active") && !e.target.closest('.popup-content')) {
-          document.querySelector(".popup-thanks").classList.remove("active");
-          document.body.style.overflow = "auto";
-      }
+    if (
+      document.querySelector(".popup-thanks.active") &&
+      !e.target.closest(".popup-content")
+    ) {
+      document.querySelector(".popup-thanks").classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
   });
-};
+}
 
 setupWheel();
 
 //wheel end
-
 
 // tab
 
@@ -227,5 +217,4 @@ function openOption(evt, optionName) {
 
   document.getElementById(optionName).style.display = "block";
   evt.currentTarget.className += " active";
-
 }
