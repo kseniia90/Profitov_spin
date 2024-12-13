@@ -3,26 +3,49 @@
 // account popup
 
 if (document.querySelector(".account_popup") !== null) {
-  document.querySelectorAll(".account-btn").forEach(function (button) {
-    button.addEventListener("click", function (e) {
+
+  window.addEventListener("click", function (e) {
+
+    if ( document.querySelector(".account_popup.active") &&
+      !e.target.closest(".popup-content")
+    ) {
+      document.querySelector(".account_popup").classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+
+    if(e.target.closest(".account-btn")){
       e.preventDefault();
       document.body.style.overflow = "hidden";
       document.querySelector(".account_popup").classList.add("active");
-    });
-  });
-  document
-    .querySelector(".account_popup-content")
-    .addEventListener("click", function (e) {
-      e.stopPropagation();
-    });
+    }
 
-  document
-    .querySelector(".account_popup .close_popup")
-    .addEventListener("click", function (e) {
-      document.body.style.overflow = "visible";
+    if (e.target.closest(".account_popup .close_popup")) {
+      e.preventDefault();
       document.querySelector(".account_popup").classList.remove("active");
-    });
+      document.body.style.overflow = "auto";
+    }
+
+  });
 }
+
+// tab
+function openOption(evt, optionName) {
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(optionName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
 
 $(function () {
   // slider reviews
@@ -39,6 +62,18 @@ $(function () {
     owl.trigger("prev.owl.carousel");
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 // wheel start
 
@@ -200,21 +235,4 @@ setupWheel();
 
 //wheel end
 
-// tab
 
-function openOption(evt, optionName) {
-  var i, tabcontent, tablinks;
-
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  document.getElementById(optionName).style.display = "block";
-  evt.currentTarget.className += " active";
-}

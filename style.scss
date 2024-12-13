@@ -140,9 +140,6 @@ header, footer {
                 font-size: 18px;
                 line-height: normal;
                 font-family: $font-benzin;
-                // @media (max-width: $mobile) {
-                //     display: none;
-                // }
             }
             .btn-icon {
                 font-size: 30px;
@@ -389,6 +386,7 @@ header, footer {
 .owl-stage{
     display: flex;
 }
+
 .item {
     display: flex;
     flex: 1 0 auto;
@@ -412,14 +410,6 @@ header, footer {
 .show__slider__button:hover {
     background-color: var(--yellow) !important;
 }
-
-
-
-
-
-
-
-
 
 .shop-card {
     width: 100%;
@@ -624,7 +614,7 @@ header, footer {
     }
 }
 
-/*popup start */
+/*wheel popup start */
 
 .popup-thanks {
     display: none;
@@ -720,7 +710,10 @@ header, footer {
     height: 100px;
 }
 
-/*popup end*/
+/*wheel popup end*/
+
+
+// poup start
 
 .popup {
     position: fixed; 
@@ -733,7 +726,7 @@ header, footer {
     backdrop-filter: blur(5px);
     transition: opacity 200ms ease-in; 
     pointer-events: none; 
-    margin: 0px ;
+    margin: 150px 0 0 ;
     padding: 0;
     &.active {
         opacity: 1; 
@@ -744,8 +737,7 @@ header, footer {
         position: relative;
         width: 100%;
         max-width: fit-content;
-        margin: 150px auto 20px;
-        height: calc(100% - 170px);
+        margin: 0 auto;
         @media (max-width:$mobile) {
             max-width: calc(100% - 30px);
             margin: 0 auto;
@@ -787,12 +779,10 @@ header, footer {
     top: 10px;
     right: 10px;
     cursor: pointer;
-    width: 24px;
-    height: 24px;
-}
-
-.close_popup {
-    path, circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+    &path, circle {
         stroke:#303030;
         transition: all 0.3s ease;
     }

@@ -996,7 +996,7 @@ header, footer {
   }
 }
 
-/*popup start */
+/*wheel popup start */
 .popup-thanks {
   display: none;
   position: fixed;
@@ -1091,7 +1091,7 @@ header, footer {
   height: 100px;
 }
 
-/*popup end*/
+/*wheel popup end*/
 .popup {
   position: fixed;
   top: 0;
@@ -1104,7 +1104,7 @@ header, footer {
           backdrop-filter: blur(5px);
   transition: opacity 200ms ease-in;
   pointer-events: none;
-  margin: 0px;
+  margin: 150px 0 0;
   padding: 0;
 }
 .popup.active {
@@ -1117,8 +1117,7 @@ header, footer {
   width: 100%;
   max-width: -moz-fit-content;
   max-width: fit-content;
-  margin: 150px auto 20px;
-  height: calc(100% - 170px);
+  margin: 0 auto;
 }
 @media (max-width: 767px) {
   .popup-dialog {
@@ -1166,11 +1165,11 @@ header, footer {
   top: 10px;
   right: 10px;
   cursor: pointer;
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
+  padding: 6px;
 }
-
-.close_popup path, .close_popup circle {
+.close_popuppath, .close_popup circle {
   stroke: #303030;
   transition: all 0.3s ease;
 }
