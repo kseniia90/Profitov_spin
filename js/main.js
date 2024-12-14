@@ -1,7 +1,6 @@
 "use strict";
 
 // account popup
-
 if (document.querySelector(".account_popup") !== null) {
 
   window.addEventListener("click", function (e) {
@@ -22,6 +21,61 @@ if (document.querySelector(".account_popup") !== null) {
     if (e.target.closest(".account_popup .close_popup")) {
       e.preventDefault();
       document.querySelector(".account_popup").classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+
+  });
+}
+
+// shop popup
+if (document.querySelector(".shop_popup") !== null) {
+
+  window.addEventListener("click", function (e) {
+
+    if ( document.querySelector(".shop_popup.active") &&
+      !e.target.closest(".popup-content")
+    ) {
+      document.querySelector(".shop_popup").classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+
+    if(e.target.closest(".open-shop")){
+      e.preventDefault();
+      document.body.style.overflow = "hidden";
+      document.querySelector(".shop_popup").classList.add("active");
+    }
+
+    if (e.target.closest(".shop_popup .close_popup")) {
+      e.preventDefault();
+      document.querySelector(".shop_popup").classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+
+  });
+}
+
+// cart popup
+
+if (document.querySelector(".cart_popup") !== null) {
+
+  window.addEventListener("click", function (e) {
+
+    if ( document.querySelector(".cart_popup.active") &&
+      !e.target.closest(".popup-content")
+    ) {
+      document.querySelector(".cart_popup").classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+
+    if(e.target.closest(".open-cart")){
+      e.preventDefault();
+      document.body.style.overflow = "hidden";
+      document.querySelector(".cart_popup").classList.add("active");
+    }
+
+    if (e.target.closest(".cart_popup .close_popup")) {
+      e.preventDefault();
+      document.querySelector(".cart_popup").classList.remove("active");
       document.body.style.overflow = "auto";
     }
 

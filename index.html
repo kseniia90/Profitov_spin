@@ -28,7 +28,7 @@
                                 <button class="custom-button">PP Coins: 100</button>
                                 <button class="custom-button">Кошелек: 1000</button>
                                 <button class="custom-button btn-icon transparent account-btn">😈</button>
-                                <button class="custom-button btn-icon transparent">
+                                <button class="custom-button btn-icon transparent open-cart">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <mask id="mask0_1_120" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
@@ -110,27 +110,30 @@
                             </form>
                         </div>
                         <div class="screen__left__item">
-                            <h2 class="title">ШОП</h2>
+                            <h2 class="title open-shop">ШОП</h2>
 
-                            <div class="show__slider">
-                                <div class="show__slider__btn show__slider__btn-prev">
+                            <div class="shop__slider">
+                                <div class="shop__slider__btn shop__slider__btn-prev">
                                     <button class=" show__prev-slide" type="button">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <mask id="mask0_1_92" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                                            <rect width="24" height="24" fill="#D9D9D9"/>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask0_1_92" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="24" height="24">
+                                                <rect width="24" height="24" fill="#D9D9D9" />
                                             </mask>
                                             <g mask="url(#mask0_1_92)">
-                                            <path d="M16 22L6 12L16 2L17.775 3.775L9.55 12L17.775 20.225L16 22Z" fill="white"/>
+                                                <path d="M16 22L6 12L16 2L17.775 3.775L9.55 12L17.775 20.225L16 22Z"
+                                                    fill="white" />
                                             </g>
                                         </svg>
-                                            
+
                                     </button>
                                 </div>
-                                <div class="show-carousel owl-carousel owl-theme show__slider__body">
+                                <div class="show-carousel owl-carousel owl-theme shop__slider__body">
 
                                     <div class="slide-item">
                                         <div class="shop-card">
-                                            <div class="shop-card-img">
+                                            <div class="shop-card-img open-product">
                                                 <img src="./img/shop_1.png" alt="shop_img">
                                             </div>
 
@@ -143,7 +146,7 @@
 
                                     <div class="slide-item">
                                         <div class="shop-card">
-                                            <div class="shop-card-img">
+                                            <div class="shop-card-img open-product">
                                                 <img src="./img/shop_2.png" alt="shop_img">
                                             </div>
 
@@ -156,7 +159,7 @@
 
                                     <div class="slide-item">
                                         <div class="shop-card">
-                                            <div class="shop-card-img">
+                                            <div class="shop-card-img open-product">
                                                 <img src="./img/shop_3.png" alt="shop_img">
                                             </div>
 
@@ -169,7 +172,7 @@
 
                                     <div class="slide-item">
                                         <div class="shop-card">
-                                            <div class="shop-card-img">
+                                            <div class="shop-card-img open-product">
                                                 <img src="./img/shop_1.png" alt="shop_img">
                                             </div>
 
@@ -180,16 +183,20 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="show__slider__btn show__slider__btn-next">
+                                <div class="shop__slider__btn shop__slider__btn-next">
                                     <button class=" show__next-slide" type="button">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <mask id="mask0_1_95" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                                            <rect x="24" y="24" width="24" height="24" transform="rotate(-180 24 24)" fill="#D9D9D9"/>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask0_1_95" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="24" height="24">
+                                                <rect x="24" y="24" width="24" height="24"
+                                                    transform="rotate(-180 24 24)" fill="#D9D9D9" />
                                             </mask>
                                             <g mask="url(#mask0_1_95)">
-                                            <path d="M8 2L18 12L8 22L6.225 20.225L14.45 12L6.225 3.775L8 2Z" fill="white"/>
+                                                <path d="M8 2L18 12L8 22L6.225 20.225L14.45 12L6.225 3.775L8 2Z"
+                                                    fill="white" />
                                             </g>
-                                        </svg>    
+                                        </svg>
                                     </button>
                                 </div>
                             </div>
@@ -233,8 +240,6 @@
             </section>
         </main>
 
-
-        <!-- <div id="overlay"></div> -->
         <!-- account popup -->
         <div class="popup account_popup">
             <div class="popup-dialog account_popup-dialog">
@@ -260,7 +265,7 @@
                             <button class="tablinks active" onclick="openOption(event, 'my-info')">Моя инфа</button>
                             <button class="tablinks" onclick="openOption(event, 'my-orders')">Мои заказы</button>
                             <button class="tablinks" onclick="openOption(event, 'my-history')">история</button>
-                            <button class="tablinks" onclick="openOption(event, 'log-out')">
+                            <button class="tablinks log-out">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <mask id="mask0_1_866" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
@@ -342,15 +347,228 @@
                                 voluptates voluptas molestias at quo sunt nulla animi laudantium dignissimos ea nesciunt
                                 officia fugiat expedita. Porro quo amet fuga.</p>
                         </div>
-
-                        <div id="log-out" aria-checked="tabcontent">
-
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
+        <!-- shop popup -->
+        <div class="popup shop_popup">
+            <div class="popup-dialog shop_popup-dialog">
+                <div class="popup-content shop_popup-content">
+                    <div class="popup-header shop_popup-header">
+                        <h2 class="popup-title shop_popup-title">ШОП</h2>
+                        <svg class="close_popup" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_1_788" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_1_788)">
+                                <path
+                                    d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                                    fill="white" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="popup-body shop_popup-body">
+                        <ul class="shop-list">
+                            <li class="shop-card">
+                                <div class="shop-card-img open-product">
+                                    <img src="./img/shop_1.png" alt="shop_img">
+                                </div>
+
+                                <div class="shop-card-details">
+                                    <p class="shop-card-price">60 000 PP</p>
+                                    <button class="shop-card-btn">+</button>
+                                </div>
+                            </li>
+                            <li class="shop-card">
+                                <div class="shop-card-img open-product">
+                                    <img src="./img/shop_2.png" alt="shop_img">
+                                </div>
+
+                                <div class="shop-card-details">
+                                    <p class="shop-card-price">60 000 PP</p>
+                                    <button class="shop-card-btn">+</button>
+                                </div>
+                            </li>
+                            <li class="shop-card">
+                                <div class="shop-card-img open-product">
+                                    <img src="./img/shop_3.png" alt="shop_img">
+                                </div>
+
+                                <div class="shop-card-details">
+                                    <p class="shop-card-price">60 000 PP</p>
+                                    <button class="shop-card-btn">+</button>
+                                </div>
+                            </li>
+                            <li class="shop-card">
+                                <div class="shop-card-img open-product">
+                                    <img src="./img/shop_1.png" alt="shop_img">
+                                </div>
+
+                                <div class="shop-card-details">
+                                    <p class="shop-card-price">60 000 PP</p>
+                                    <button class="shop-card-btn">+</button>
+                                </div>
+                            </li>
+                            <li class="shop-card">
+                                <div class="shop-card-img open-product">
+                                    <img src="./img/shop_2.png" alt="shop_img">
+                                </div>
+
+                                <div class="shop-card-details">
+                                    <p class="shop-card-price">60 000 PP</p>
+                                    <button class="shop-card-btn">+</button>
+                                </div>
+                            </li>
+                            <li class="shop-card">
+                                <div class="shop-card-img open-product">
+                                    <img src="./img/shop_1.png" alt="shop_img">
+                                </div>
+
+                                <div class="shop-card-details">
+                                    <p class="shop-card-price">60 000 PP</p>
+                                    <button class="shop-card-btn">+</button>
+                                </div>
+                            </li>
+                            <li class="shop-card">
+                                <div class="shop-card-img open-product">
+                                    <img src="./img/shop_3.png" alt="shop_img">
+                                </div>
+
+                                <div class="shop-card-details">
+                                    <p class="shop-card-price">60 000 PP</p>
+                                    <button class="shop-card-btn">+</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- cart popup -->
+        <div class="popup cart_popup">
+            <div class="popup-dialog cart_popup-dialog">
+                <div class="popup-content cart_popup-content">
+                    <div class="popup-header cart_popup-header">
+                        <svg class="close_popup" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_1_788" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_1_788)">
+                                <path
+                                    d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                                    fill="white" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="popup-body cart_popup-body">
+                        <ul class="cart-list">
+                            <li class="shop-card">
+                                <div class="shop-card-img open-product">
+                                    <img src="./img/shop_1.png" alt="shop_img">
+                                </div>
+
+                                <div class="cart-product-details">
+                                    <h3 class="product-title">Наушники AirPods PRO 2</h3>
+                                    <div class="row">
+                                        <p class="product-description">AirPods Pro 2 MagSafe Charging Case USB C</p>
+                                        <p class="product-price">60 000 PP</p>
+                                    </div>
+                                    <div class="row row2">
+                                        <p class="delete-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask0_1_573" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                            <rect width="24" height="24" fill="#D9D9D9"/>
+                                            </mask>
+                                            <g mask="url(#mask0_1_573)">
+                                            <path d="M7 21C6.45 21 5.97917 20.8042 5.5875 20.4125C5.19583 20.0208 5 19.55 5 19V6H4V4H9V3H15V4H20V6H19V19C19 19.55 18.8042 20.0208 18.4125 20.4125C18.0208 20.8042 17.55 21 17 21H7ZM17 6H7V19H17V6ZM9 17H11V8H9V17ZM13 17H15V8H13V17Z" fill="white"/>
+                                            </g>
+                                            </svg>
+                                            </p>
+                                            <div class="shopping-cart__quantity">
+                                                <div class="shopping_cart__counter">
+                                                    <span class="minus_q">-</span>
+                                                    <input type="number" disabled="" name="product_quantity" value="2" min="1" max="" inputmode="numeric" style="-moz-appearance: textfield; -webkit-inner-spin-button: initial;">
+                                                    <span class="plus_q">+</span>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="shop-card">
+                                <div class="shop-card-img open-product">
+                                    <img src="./img/shop_2.png" alt="shop_img">
+                                </div>
+
+                                <div class="cart-product-details">
+                                    <h3 class="product-title">Наушники AirPods PRO 2</h3>
+                                    <div class="row">
+                                        <p class="product-description">AirPods Pro 2 MagSafe Charging Case USB C</p>
+                                        <p class="product-price">60 000 PP</p>
+                                    </div>
+                                    <div class="row row2">
+                                        <p class="delete-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask0_1_573" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                            <rect width="24" height="24" fill="#D9D9D9"/>
+                                            </mask>
+                                            <g mask="url(#mask0_1_573)">
+                                            <path d="M7 21C6.45 21 5.97917 20.8042 5.5875 20.4125C5.19583 20.0208 5 19.55 5 19V6H4V4H9V3H15V4H20V6H19V19C19 19.55 18.8042 20.0208 18.4125 20.4125C18.0208 20.8042 17.55 21 17 21H7ZM17 6H7V19H17V6ZM9 17H11V8H9V17ZM13 17H15V8H13V17Z" fill="white"/>
+                                            </g>
+                                            </svg>
+                                            </p>
+                                            <div class="shopping-cart__quantity">
+                                                <div class="shopping_cart__counter">
+                                                    <span class="minus_q">-</span>
+                                                    <input type="number" disabled="" name="product_quantity" value="2" min="1" max="" inputmode="numeric" style="-moz-appearance: textfield; -webkit-inner-spin-button: initial;">
+                                                    <span class="plus_q">+</span>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="shop-card">
+                                <div class="shop-card-img open-product">
+                                    <img src="./img/shop_3.png" alt="shop_img">
+                                </div>
+
+                                <div class="cart-product-details">
+                                    <h3 class="product-title">Наушники AirPods PRO 2</h3>
+                                    <div class="row">
+                                        <p class="product-description">AirPods Pro 2 MagSafe Charging Case USB C</p>
+                                        <p class="product-price">60 000 PP</p>
+                                    </div>
+                                    <div class="row row2">
+                                        <p class="delete-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask0_1_573" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                            <rect width="24" height="24" fill="#D9D9D9"/>
+                                            </mask>
+                                            <g mask="url(#mask0_1_573)">
+                                            <path d="M7 21C6.45 21 5.97917 20.8042 5.5875 20.4125C5.19583 20.0208 5 19.55 5 19V6H4V4H9V3H15V4H20V6H19V19C19 19.55 18.8042 20.0208 18.4125 20.4125C18.0208 20.8042 17.55 21 17 21H7ZM17 6H7V19H17V6ZM9 17H11V8H9V17ZM13 17H15V8H13V17Z" fill="white"/>
+                                            </g>
+                                            </svg>
+                                            </p>
+                                            <div class="shopping-cart__quantity">
+                                                <div class="shopping_cart__counter">
+                                                    <span class="minus_q">-</span>
+                                                    <input type="number" disabled="" name="product_quantity" value="2" min="1" max="" inputmode="numeric" style="-moz-appearance: textfield; -webkit-inner-spin-button: initial;">
+                                                    <span class="plus_q">+</span>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="custom-button buy-btn">Оформить покупку</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
     <script src="./lib/jquery.min.js"></script>
     <script src="./lib/owlcarousel/js/owl.carousel.min.js"></script>
