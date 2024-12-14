@@ -579,6 +579,7 @@ header, footer {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  border: 1px solid red;
 }
 .screen__content .screen__left__item {
   padding: 30px 25px 25px;
@@ -713,8 +714,14 @@ header, footer {
 }
 
 .open-shop,
-.open-product {
+.open-product,
+.login-btn {
   cursor: pointer;
+}
+
+.login-btn {
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
 .shop__slider {
@@ -1075,7 +1082,7 @@ header, footer {
 }
 .popup-title {
   font-family: "Benzin", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 24px;
   line-height: normal;
   text-align: center;
@@ -1090,6 +1097,7 @@ header, footer {
   flex: 1 1 auto;
   text-align: center;
   height: 100%;
+  font-family: "RFDewiExpanded", sans-serif;
 }
 
 .close_popup {
@@ -1113,7 +1121,14 @@ header, footer {
   max-width: -moz-min-content;
   max-width: min-content;
 }
-.account_popup .my-info__form {
+.account_popup .my-info__content > p {
+  text-align: start;
+  font-family: "RFDewiExpanded", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.popup__form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -1122,44 +1137,11 @@ header, footer {
   margin-bottom: 40px;
 }
 @media (max-width: 767px) {
-  .account_popup .my-info__form {
+  .popup__form {
     gap: 15px;
   }
 }
-.account_popup .my-info__form__inputs-block {
-  flex: 1 0 auto;
-  height: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-direction: column;
-  gap: 24px;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
-  text-align: left;
-}
-@media (max-width: 1780px) {
-  .account_popup .my-info__form__inputs-block {
-    font-size: 18px;
-    line-height: 21px;
-  }
-}
-@media (max-width: 1200px) {
-  .account_popup .my-info__form__inputs-block {
-    font-size: 12px;
-    line-height: 14px;
-  }
-}
-.account_popup .my-info__form__inputs-block .input-block {
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-direction: column;
-  gap: 8px;
-}
-.account_popup .my-info__form input, .account_popup .my-info__form textarea {
+.popup__form input, .popup__form textarea {
   width: 100%;
   box-sizing: border-box;
   padding: 16px;
@@ -1171,16 +1153,16 @@ header, footer {
   font-family: "RFDewiExpanded", sans-serif;
   font-size: 22px;
 }
-.account_popup .my-info__form input:active, .account_popup .my-info__form input:focus, .account_popup .my-info__form textarea:active, .account_popup .my-info__form textarea:focus {
+.popup__form input:active, .popup__form input:focus, .popup__form textarea:active, .popup__form textarea:focus {
   outline: none;
 }
-.account_popup .my-info__form input::-moz-placeholder, .account_popup .my-info__form textarea::-moz-placeholder {
+.popup__form input::-moz-placeholder, .popup__form textarea::-moz-placeholder {
   color: #4F4F4F;
 }
-.account_popup .my-info__form input::placeholder, .account_popup .my-info__form textarea::placeholder {
+.popup__form input::placeholder, .popup__form textarea::placeholder {
   color: #4F4F4F;
 }
-.account_popup .my-info__form button {
+.popup__form button {
   font-family: "RFDewiExpanded", sans-serif;
   font-weight: 600;
   font-size: 24px;
@@ -1188,16 +1170,20 @@ header, footer {
   text-decoration: none;
 }
 @media (max-width: 1200px) {
-  .account_popup .my-info__form button {
+  .popup__form button {
     font-size: 16px;
     line-height: 18.5px;
   }
 }
-.account_popup .my-info__content > p {
-  text-align: start;
-  font-family: "RFDewiExpanded", sans-serif;
-  font-size: 22px;
-  font-weight: 400;
+
+.sing-in__form .custom-button,
+.login__form .custom-button {
+  grid-area: 3/1/4/3;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  padding: 24px;
+  margin-top: 10px;
 }
 
 .popup-body .tab {
@@ -1444,4 +1430,25 @@ header, footer {
   letter-spacing: 0.03em;
   text-align: center;
   padding: 20px;
+}
+
+.success_popup-dialog,
+.error_popup-dialog,
+.error-balance_popup-dialog,
+.congratulation_popup-dialog,
+.success-transaction_popup-dialog,
+.error-transaction_popup-dialog {
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 90px);
+}
+.success_popup-content,
+.error_popup-content,
+.error-balance_popup-content,
+.congratulation_popup-content,
+.success-transaction_popup-content,
+.error-transaction_popup-content {
+  padding: 40px 60px 50px;
 }/*# sourceMappingURL=style.css.map */

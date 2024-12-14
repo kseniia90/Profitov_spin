@@ -27,7 +27,7 @@
                             <div class="header-left">
                                 <button class="custom-button">PP Coins: 100</button>
                                 <button class="custom-button">Кошелек: 1000</button>
-                                <button class="custom-button btn-icon transparent account-btn">😈</button>
+                                <button class="custom-button btn-icon transparent sing-in-btn">😈</button>
                                 <button class="custom-button btn-icon transparent open-cart">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -146,7 +146,7 @@
 
                                     <div class="slide-item">
                                         <div class="shop-card">
-                                            <div class="shop-card-img open-product">
+                                            <div class="shop-card-img open-product" data-popup="popup-1">
                                                 <img src="./img/shop_2.png" alt="shop_img">
                                             </div>
 
@@ -202,7 +202,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="screen__right">
+                    <!-- <div class="screen__right">
                         <h2 class="title">колесо фортуны</h2>
                         <div class="deal-wheel">
                             <ul class="spinner"></ul>
@@ -212,7 +212,7 @@
                             </figure>
                             <div class="ticker"></div>
 
-                            <!-- Thanks popup  success-->
+                             Thanks popup  success
 
                             <div class="popup-thanks">
                                 <div class="popup-dialog">
@@ -235,10 +235,73 @@
                         </div>
                         <button class="custom-button">Ежедневный профит</button>
                         <div class="timer">23:00</div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </main>
+
+        <!-- sing-in popup -->
+        <div class="popup sing-in_popup">
+            <div class="popup-dialog sing-in_popup-dialog">
+                <div class="popup-content sing-in_popup-content">
+                    <div class="popup-header sing-in_popup-header">
+                        <h2 class="popup-title sing-in_popup-title">Авторизация</h2>
+                        <svg class="close_popup" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_1_788" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_1_788)">
+                                <path
+                                    d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                                    fill="white" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="popup-body sing-in_popup-body">
+                        <form class="popup__form sing-in__form">
+                            <input type="text" name="user_name" placeholder="Имя">
+                            <input type="text" name="user_last-name" placeholder="Фамилия">
+                            <input type="email" name="user_email" placeholder="Почта">
+                            <input type="password" name="user_pass" placeholder="Пароль">
+                            <button type="submit" class="custom-button">Зарегистрироваться</button>
+                        </form>
+                        <p>Уже есть аккаунт? <span class="login-btn"> Войти</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- login popup -->
+        <div class="popup login_popup">
+            <div class="popup-dialog login_popup-dialog">
+                <div class="popup-content login_popup-content">
+                    <div class="popup-header login_popup-header">
+                        <h2 class="popup-title login_popup-title">Вход</h2>
+                        <svg class="close_popup" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_1_788" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_1_788)">
+                                <path
+                                    d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                                    fill="white" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="popup-body login_popup-body">
+                        <form class="popup__form login__form">
+                            <input type="email" name="user_email" placeholder="Почта">
+                            <input type="password" name="user_pass" placeholder="Пароль">
+                            <button type="submit" class="custom-button">войти</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- account popup -->
         <div class="popup account_popup">
@@ -283,7 +346,7 @@
 
                         <div id="my-info" class="tabcontent" style="display: block;">
                             <div class="my-info__content">
-                                <form class="my-info__form">
+                                <form class="popup__form my-info__form">
                                     <input type="text" name="user_name" placeholder="Имя">
                                     <input type="text" name="user_last-name" placeholder="Фамилия">
                                 </form>
@@ -351,6 +414,7 @@
                 </div>
             </div>
         </div>
+
         <!-- shop popup -->
         <div class="popup shop_popup">
             <div class="popup-dialog shop_popup-dialog">
@@ -447,6 +511,7 @@
                 </div>
             </div>
         </div>
+
         <!-- cart popup -->
         <div class="popup cart_popup">
             <div class="popup-dialog cart_popup-dialog">
@@ -562,6 +627,211 @@
                             </li>
                         </ul>
                         <button class="custom-button buy-btn">Оформить покупку</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- product popup -->
+        <div class="popup product_popup" id="popup-1">
+            <div class="popup-dialog product_popup-dialog">
+                <div class="popup-content product_popup-content">
+                    <div class="popup-header product_popup-header">
+                        <svg class="close_popup" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_1_788" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_1_788)">
+                                <path
+                                    d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                                    fill="white" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="popup-body product_popup-body">
+                        <li class="shop-card">
+                            <div class="shop-card-img">
+                                <img src="./img/shop_2.png" alt="shop_img">
+                            </div>
+                            <div class="shop-card-info">
+                                <h2 class="popup-title product_popup-title">Худи PP</h2>
+                                <p>Наш крутой фирменный мерч. Подари ближнему своему.</p>
+                                <div class="my-orders__item">
+                                    <div class="table-row">
+                                        <p class="table-col">№ заказа:</p>
+                                        <p class="table-col">999</p>
+                                    </div>
+                                    <div class="table-row">
+                                        <p class="table-col">№ заказа:</p>
+                                        <p class="table-col">999</p>
+                                    </div>
+                                </div>
+
+                                <div class="shop-card-details">
+                                    <p class="shop-card-price">60 000 PP</p>
+                                    <button class="shop-card-btn">+</button>
+                                </div>
+                            </div>
+                            
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- success popup -->
+        <div class="popup success_popup">
+            <div class="popup-dialog success_popup-dialog">
+                <div class="popup-content success_popup-content">
+                    <div class="popup-header success_popup-header">
+                        <h2 class="popup-title success_popup-title">Успех!</h2>
+                        <svg class="close_popup" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_1_788" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_1_788)">
+                                <path
+                                    d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                                    fill="white" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="popup-body success_popup-body">
+                        <p>Поздравляем! Заказ успешно оформлен!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- error popup -->
+        <div class="popup error_popup">
+            <div class="popup-dialog error_popup-dialog">
+                <div class="popup-content error_popup-content">
+                    <div class="popup-header error_popup-header">
+                        <h2 class="popup-title error_popup-title">УПС!</h2>
+                        <svg class="close_popup" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_1_788" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_1_788)">
+                                <path
+                                    d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                                    fill="white" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="popup-body error_popup-body">
+                        <p>Что-то пошло не так! Неизвестная ошибочка</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- error-balance popup -->
+        <div class="popup error-balance_popup">
+            <div class="popup-dialog error-balance_popup-dialog">
+                <div class="popup-content error-balance_popup-content">
+                    <div class="popup-header error-balance_popup-header">
+                        <h2 class="popup-title error-balance_popup-title">УПС!</h2>
+                        <svg class="close_popup" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_1_788" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_1_788)">
+                                <path
+                                    d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                                    fill="white" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="popup-body error-balance_popup-body">
+                        <p>Недостаточно баланса, дружище!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- congratulation popup -->
+        <div class="popup congratulation_popup">
+            <div class="popup-dialog congratulation_popup-dialog">
+                <div class="popup-content congratulation_popup-content">
+                    <div class="popup-header congratulation_popup-header">
+                        <h2 class="popup-title congratulation_popup-title">Поздравляем!</h2>
+                        <svg class="close_popup" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_1_788" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_1_788)">
+                                <path
+                                    d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                                    fill="white" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="popup-body congratulation_popup-body">
+                        <p>Ура! Вы получили 50 коинов!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- success-transaction popup -->
+        <div class="popup success-transaction_popup">
+            <div class="popup-dialog success-transaction_popup-dialog">
+                <div class="popup-content success-transaction_popup-content">
+                    <div class="popup-header success-transaction_popup-header">
+                        <h2 class="popup-title success-transaction_popup-title">Успех!</h2>
+                        <svg class="close_popup" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_1_788" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_1_788)">
+                                <path
+                                    d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                                    fill="white" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="popup-body success-transaction_popup-body">
+                        <p>Транзакция совершена успешно</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- error-transaction popup -->
+        <div class="popup error-transaction_popup">
+            <div class="popup-dialog error-transaction_popup-dialog">
+                <div class="popup-content error-transaction_popup-content">
+                    <div class="popup-header error-transaction_popup-header">
+                        <h2 class="popup-title error-transaction_popup-title">О оооооууу</h2>
+                        <svg class="close_popup" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_1_788" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_1_788)">
+                                <path
+                                    d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                                    fill="white" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="popup-body error-transaction_popup-body">
+                        <p>К сожалению, транзакция не прошла</p>
                     </div>
                 </div>
             </div>

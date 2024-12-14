@@ -1,30 +1,86 @@
 "use strict";
 
-// account popup
-if (document.querySelector(".account_popup") !== null) {
+// sing-in popup
+if (document.querySelector(".sing-in_popup") !== null) {
 
   window.addEventListener("click", function (e) {
 
-    if ( document.querySelector(".account_popup.active") &&
+    if ( document.querySelector(".sing-in_popup.active") &&
       !e.target.closest(".popup-content")
     ) {
-      document.querySelector(".account_popup").classList.remove("active");
+      document.querySelector(".sing-in_popup").classList.remove("active");
       document.body.style.overflow = "auto";
     }
 
-    if(e.target.closest(".account-btn")){
+    if(e.target.closest(".sing-in-btn")){
       e.preventDefault();
       document.body.style.overflow = "hidden";
-      document.querySelector(".account_popup").classList.add("active");
+      document.querySelector(".sing-in_popup").classList.add("active");
     }
 
-    if (e.target.closest(".account_popup .close_popup")) {
+    if (e.target.closest(".sing-in_popup .close_popup")) {
       e.preventDefault();
-      document.querySelector(".account_popup").classList.remove("active");
+      document.querySelector(".sing-in_popup").classList.remove("active");
       document.body.style.overflow = "auto";
     }
 
   });
+}
+
+// login popup
+if (document.querySelector(".login_popup") !== null) {
+
+  window.addEventListener("click", function (e) {
+
+    if ( document.querySelector(".login_popup.active") &&
+      !e.target.closest(".popup-content")
+    ) {
+      document.querySelector(".login_popup").classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+
+    if(e.target.closest(".login-btn")){
+      e.preventDefault();
+      document.querySelector(".sing-in_popup").classList.remove("active");
+      document.body.style.overflow = "hidden";
+      document.querySelector(".login_popup").classList.add("active");
+    }
+
+    if (e.target.closest(".login_popup .close_popup")) {
+      e.preventDefault();
+      document.querySelector(".login_popup").classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+
+  });
+}
+
+//  account popup
+
+function openAccountPopup(){
+       
+  if (document.querySelector(".account_popup") !== null) {
+
+    document.body.style.overflow = "hidden";
+    document.querySelector(".account_popup").classList.add("active");
+
+    window.addEventListener("click", function (e) {
+  
+      if ( document.querySelector(".account_popup.active") &&
+        !e.target.closest(".popup-content")
+      ) {
+        document.querySelector(".account_popup").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+      if (e.target.closest(".account_popup .close_popup")) {
+        e.preventDefault();
+        document.querySelector(".account_popup").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+    });
+  }
 }
 
 // shop popup
@@ -55,7 +111,6 @@ if (document.querySelector(".shop_popup") !== null) {
 }
 
 // cart popup
-
 if (document.querySelector(".cart_popup") !== null) {
 
   window.addEventListener("click", function (e) {
@@ -80,6 +135,204 @@ if (document.querySelector(".cart_popup") !== null) {
     }
 
   });
+}
+
+//  product popup
+
+document.querySelectorAll('.open-product').forEach(function(openBtn) {
+  openBtn.addEventListener('click', openProductPopup)
+})
+
+
+function openProductPopup(event){
+  
+  let popupId = event.currentTarget.getAttribute("data-popup");   
+  let popup = document.getElementById(popupId);
+
+  if (popup !== null) {
+    
+    document.body.style.overflow = "hidden";
+    popup.classList.add("active");
+
+    window.addEventListener("click", function (e) {
+  
+      // if ( document.querySelector(".product_popup.active") &&
+      //   !e.target.closest(".popup-content")
+      // ) {
+      //   popup.classList.remove("active");
+      //   document.body.style.overflow = "auto";
+      // }
+  
+      if (e.target.closest(".product_popup .close_popup")) {
+        e.preventDefault();
+        popup.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+    });
+  }
+}
+
+// success popup
+function openSuccessPopup(){
+       
+  if (document.querySelector(".success_popup") !== null) {
+
+    document.body.style.overflow = "hidden";
+    document.querySelector(".success_popup").classList.add("active");
+
+    window.addEventListener("click", function (e) {
+  
+      if ( document.querySelector(".success_popup.active") &&
+        !e.target.closest(".popup-content")
+      ) {
+        document.querySelector(".success_popup").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+      if (e.target.closest(".success_popup .close_popup")) {
+        e.preventDefault();
+        document.querySelector(".success_popup").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+    });
+  }
+}
+
+// error popup
+function openErrorPopup(){
+       
+  if (document.querySelector(".error_popup") !== null) {
+
+    document.body.style.overflow = "hidden";
+    document.querySelector(".error_popup").classList.add("active");
+
+    window.addEventListener("click", function (e) {
+  
+      if ( document.querySelector(".error_popup.active") &&
+        !e.target.closest(".popup-content")
+      ) {
+        document.querySelector(".error_popup").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+      if (e.target.closest(".error_popup .close_popup")) {
+        e.preventDefault();
+        document.querySelector(".error_popup").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+    });
+  }
+}
+
+// error-balance popup
+function openErrorBalancePopup(){
+       
+  if (document.querySelector(".error-balance_popup") !== null) {
+
+    document.body.style.overflow = "hidden";
+    document.querySelector(".error-balance_popup").classList.add("active");
+
+    window.addEventListener("click", function (e) {
+  
+      if ( document.querySelector(".error-balance_popup.active") &&
+        !e.target.closest(".popup-content")
+      ) {
+        document.querySelector(".error-balance_popup").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+      if (e.target.closest(".error-balance_popup .close_popup")) {
+        e.preventDefault();
+        document.querySelector(".error-balance_popup").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+    });
+  }
+}
+
+// success-transaction popup
+function openSuccessTransactionPopup(){
+       
+  if (document.querySelector(".success-transaction_popup") !== null) {
+
+    document.body.style.overflow = "hidden";
+    document.querySelector(".success-transaction_popup").classList.add("active");
+
+    window.addEventListener("click", function (e) {
+  
+      if ( document.querySelector(".success-transaction_popup.active") &&
+        !e.target.closest(".popup-content")
+      ) {
+        document.querySelector(".success-transaction_popup").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+      if (e.target.closest(".success-transaction_popup .close_popup")) {
+        e.preventDefault();
+        document.querySelector(".success-transaction_popup").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+    });
+  }
+}
+
+// error-transaction popup
+function openErrorTransactionPopup(){
+       
+  if (document.querySelector(".error-transaction_popup") !== null) {
+
+    document.body.style.overflow = "hidden";
+    document.querySelector(".error-transaction_popup").classList.add("active");
+
+    window.addEventListener("click", function (e) {
+  
+      if ( document.querySelector(".error-transaction_popup.active") &&
+        !e.target.closest(".popup-content")
+      ) {
+        document.querySelector(".error-transaction_popup").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+      if (e.target.closest(".error-transaction_popup .close_popup")) {
+        e.preventDefault();
+        document.querySelector(".error-transaction_popup").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+    });
+  }
+}
+
+// congratulation popup
+function openCongratulationPopup(){
+       
+  if (document.querySelector(".congratulation_popup") !== null) {
+
+    document.body.style.overflow = "hidden";
+    document.querySelector(".congratulation_popup").classList.add("active");
+
+    window.addEventListener("click", function (e) {
+  
+      if ( document.querySelector(".congratulation_popup.active") &&
+        !e.target.closest(".popup-content")
+      ) {
+        document.querySelector(".congratulation_popup").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+      if (e.target.closest(".congratulation_popup .close_popup")) {
+        e.preventDefault();
+        document.querySelector(".congratulation_popup").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+  
+    });
+  }
 }
 
 // tab
@@ -131,161 +384,161 @@ $(function () {
 
 // wheel start
 
-const prizes = [
-  {
-    text: "1",
-    color: "#1c1b1c",
-  },
-  {
-    text: "2",
-    color: "#520b9a",
-  },
-  {
-    text: "3",
-    color: "#1c1b1c",
-  },
-  {
-    text: "4",
-    color: "#520b9a",
-  },
-  {
-    text: "5",
-    color: "#1c1b1c",
-  },
-  {
-    text: "6",
-    color: "#520b9a",
-  },
-  {
-    text: "7",
-    color: "#1c1b1c",
-  },
-  {
-    text: "10",
-    color: "#520b9a",
-  },
-];
+// const prizes = [
+//   {
+//     text: "1",
+//     color: "#1c1b1c",
+//   },
+//   {
+//     text: "2",
+//     color: "#520b9a",
+//   },
+//   {
+//     text: "3",
+//     color: "#1c1b1c",
+//   },
+//   {
+//     text: "4",
+//     color: "#520b9a",
+//   },
+//   {
+//     text: "5",
+//     color: "#1c1b1c",
+//   },
+//   {
+//     text: "6",
+//     color: "#520b9a",
+//   },
+//   {
+//     text: "7",
+//     color: "#1c1b1c",
+//   },
+//   {
+//     text: "10",
+//     color: "#520b9a",
+//   },
+// ];
 
-const wheel = document.querySelector(".deal-wheel");
-const spinner = wheel.querySelector(".spinner");
-const trigger = wheel.querySelector(".btn-spin");
-const ticker = wheel.querySelector(".ticker");
-const reaper = wheel.querySelector(".grim-reaper");
-const prizeSlice = 360 / prizes.length;
-const prizeOffset = Math.floor(180 / prizes.length);
-const spinClass = "is-spinning";
-const selectedClass = "selected";
-const spinnerStyles = window.getComputedStyle(spinner);
-let tickerAnim;
-let rotation = 0;
-let currentSlice = 0;
-let prizeNodes;
+// const wheel = document.querySelector(".deal-wheel");
+// const spinner = wheel.querySelector(".spinner");
+// const trigger = wheel.querySelector(".btn-spin");
+// const ticker = wheel.querySelector(".ticker");
+// const reaper = wheel.querySelector(".grim-reaper");
+// const prizeSlice = 360 / prizes.length;
+// const prizeOffset = Math.floor(180 / prizes.length);
+// const spinClass = "is-spinning";
+// const selectedClass = "selected";
+// const spinnerStyles = window.getComputedStyle(spinner);
+// let tickerAnim;
+// let rotation = 0;
+// let currentSlice = 0;
+// let prizeNodes;
 
-const createPrizeNodes = () => {
-  prizes.forEach(({ text, color }, i) => {
-    const rotation = prizeSlice * i * -1 - prizeOffset;
-    spinner.insertAdjacentHTML(
-      "beforeend",
-      `<li class="prize" style="--rotate: ${rotation}deg"><span class="text">${text}</span></li>`
-    );
-  });
-};
+// const createPrizeNodes = () => {
+//   prizes.forEach(({ text, color }, i) => {
+//     const rotation = prizeSlice * i * -1 - prizeOffset;
+//     spinner.insertAdjacentHTML(
+//       "beforeend",
+//       `<li class="prize" style="--rotate: ${rotation}deg"><span class="text">${text}</span></li>`
+//     );
+//   });
+// };
 
-const createConicGradient = () => {
-  spinner.setAttribute(
-    "style",
-    `background: conic-gradient( from -90deg,${prizes
-      .map(
-        ({ color }, i) =>
-          `${color} 0 ${(100 / prizes.length) * (prizes.length - i)}%`
-      )
-      .reverse()});`
-  );
-};
+// const createConicGradient = () => {
+//   spinner.setAttribute(
+//     "style",
+//     `background: conic-gradient( from -90deg,${prizes
+//       .map(
+//         ({ color }, i) =>
+//           `${color} 0 ${(100 / prizes.length) * (prizes.length - i)}%`
+//       )
+//       .reverse()});`
+//   );
+// };
 
-const setupWheel = () => {
-  createConicGradient();
-  createPrizeNodes();
-  prizeNodes = wheel.querySelectorAll(".prize");
-};
+// const setupWheel = () => {
+//   createConicGradient();
+//   createPrizeNodes();
+//   prizeNodes = wheel.querySelectorAll(".prize");
+// };
 
-const spinertia = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+// const spinertia = (min, max) => {
+//   min = Math.ceil(min);
+//   max = Math.floor(max);
+//   return Math.floor(Math.random() * (max - min + 1)) + min;
+// };
 
-const runTickerAnimation = () => {
-  const values = spinnerStyles.transform.split("(")[1].split(")")[0].split(",");
-  const a = values[0];
-  const b = values[1];
-  let rad = Math.atan2(b, a);
+// const runTickerAnimation = () => {
+//   const values = spinnerStyles.transform.split("(")[1].split(")")[0].split(",");
+//   const a = values[0];
+//   const b = values[1];
+//   let rad = Math.atan2(b, a);
 
-  if (rad < 0) rad += 2 * Math.PI;
+//   if (rad < 0) rad += 2 * Math.PI;
 
-  const angle = Math.round(rad * (180 / Math.PI));
-  const slice = Math.floor(angle / prizeSlice);
+//   const angle = Math.round(rad * (180 / Math.PI));
+//   const slice = Math.floor(angle / prizeSlice);
 
-  if (currentSlice !== slice) {
-    ticker.style.animation = "none";
-    setTimeout(() => (ticker.style.animation = null), 10);
-    currentSlice = slice;
-  }
+//   if (currentSlice !== slice) {
+//     ticker.style.animation = "none";
+//     setTimeout(() => (ticker.style.animation = null), 10);
+//     currentSlice = slice;
+//   }
 
-  tickerAnim = requestAnimationFrame(runTickerAnimation);
-};
+//   tickerAnim = requestAnimationFrame(runTickerAnimation);
+// };
 
-const selectPrize = () => {
-  const selected = Math.floor(rotation / prizeSlice);
-  prizeNodes[selected].classList.add(selectedClass);
-  document.getElementById("cupon").innerHTML =
-    prizeNodes[selected].querySelector(".text").innerHTML;
-  setTimeout(() => {
-    document.querySelector(".popup-thanks").classList.add("active");
-  }, "2000");
-};
+// const selectPrize = () => {
+//   const selected = Math.floor(rotation / prizeSlice);
+//   prizeNodes[selected].classList.add(selectedClass);
+//   document.getElementById("cupon").innerHTML =
+//     prizeNodes[selected].querySelector(".text").innerHTML;
+//   setTimeout(() => {
+//     document.querySelector(".popup-thanks").classList.add("active");
+//   }, "2000");
+// };
 
-trigger.addEventListener("click", () => {
-  trigger.disabled = true;
-  rotation = Math.floor(Math.random() * 360 + spinertia(2000, 5000));
-  prizeNodes.forEach((prize) => prize.classList.remove(selectedClass));
-  wheel.classList.add(spinClass);
-  spinner.style.setProperty("--rotate", rotation);
-  ticker.style.animation = "none";
-  runTickerAnimation();
-});
+// trigger.addEventListener("click", () => {
+//   trigger.disabled = true;
+//   rotation = Math.floor(Math.random() * 360 + spinertia(2000, 5000));
+//   prizeNodes.forEach((prize) => prize.classList.remove(selectedClass));
+//   wheel.classList.add(spinClass);
+//   spinner.style.setProperty("--rotate", rotation);
+//   ticker.style.animation = "none";
+//   runTickerAnimation();
+// });
 
-spinner.addEventListener("transitionend", () => {
-  cancelAnimationFrame(tickerAnim);
-  trigger.disabled = false;
-  trigger.focus();
-  rotation %= 360;
-  selectPrize();
-  wheel.classList.remove(spinClass);
-  spinner.style.setProperty("--rotate", rotation);
-});
+// spinner.addEventListener("transitionend", () => {
+//   cancelAnimationFrame(tickerAnim);
+//   trigger.disabled = false;
+//   trigger.focus();
+//   rotation %= 360;
+//   selectPrize();
+//   wheel.classList.remove(spinClass);
+//   spinner.style.setProperty("--rotate", rotation);
+// });
 
-const showPopup = () => {};
+// const showPopup = () => {};
 
-if (document.querySelector(".popup-thanks") !== null) {
-  window.addEventListener("click", function (e) {
-    if (e.target.closest(".popup__close-thanks")) {
-      e.preventDefault();
-      document.querySelector(".popup-thanks").classList.remove("active");
-      document.body.style.overflow = "auto";
-    }
+// if (document.querySelector(".popup-thanks") !== null) {
+//   window.addEventListener("click", function (e) {
+//     if (e.target.closest(".popup__close-thanks")) {
+//       e.preventDefault();
+//       document.querySelector(".popup-thanks").classList.remove("active");
+//       document.body.style.overflow = "auto";
+//     }
 
-    if (
-      document.querySelector(".popup-thanks.active") &&
-      !e.target.closest(".popup-content")
-    ) {
-      document.querySelector(".popup-thanks").classList.remove("active");
-      document.body.style.overflow = "auto";
-    }
-  });
-}
+//     if (
+//       document.querySelector(".popup-thanks.active") &&
+//       !e.target.closest(".popup-content")
+//     ) {
+//       document.querySelector(".popup-thanks").classList.remove("active");
+//       document.body.style.overflow = "auto";
+//     }
+//   });
+// }
 
-setupWheel();
+// setupWheel();
 
 //wheel end
 
