@@ -202,27 +202,25 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="screen__right">
+                    <div class="screen__right">
                         <h2 class="title">колесо фортуны</h2>
                         <div class="deal-wheel">
-                            <ul class="spinner"></ul>
+                            <div class="spinner-container"><ul class="spinner"></ul></div>
                             <figure class="cap">
-                                <button class="btn-spin"><img src="img/spinn_b.svg" alt="" width="32"
-                                        height="38"></button>
+                                <button class="btn-spin"></button>
                             </figure>
                             <div class="ticker"></div>
-
-                             Thanks popup  success
-
+                    
+                            <!-- Thanks popup  success-->
+                    
                             <div class="popup-thanks">
                                 <div class="popup-dialog">
                                     <div class="popup-content">
                                         <div class="popup-body">
                                             <div class="popup__title">
-                                                <div class="popup__close-thanks"><span class="close-icon">&times;</span>
-                                                </div>
+                                                <div class="popup__close-thanks"><span class="close-icon">&times;</span></div>
                                             </div>
-
+                    
                                             <div class="popup__text">
                                                 <p><b>Вітаємо!</b><br />
                                                     Ваша знижка: <span id="cupon"></span></p>
@@ -231,11 +229,15 @@
                                     </div>
                                 </div>
                             </div>
-
+                    
                         </div>
                         <button class="custom-button">Ежедневный профит</button>
-                        <div class="timer">23:00</div>
-                    </div> -->
+
+                        <div id="timer" class="timer">
+                            <div id="hours"></div>
+                            <div id="minutes"></div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -651,7 +653,7 @@
                         </svg>
                     </div>
                     <div class="popup-body product_popup-body">
-                        <li class="shop-card">
+                        <div class="shop-card">
                             <div class="shop-card-img">
                                 <img src="./img/shop_2.png" alt="shop_img">
                             </div>
@@ -660,12 +662,12 @@
                                 <p>Наш крутой фирменный мерч. Подари ближнему своему.</p>
                                 <div class="my-orders__item">
                                     <div class="table-row">
-                                        <p class="table-col">№ заказа:</p>
-                                        <p class="table-col">999</p>
+                                        <p class="table-col">Хлопок:</p>
+                                        <p class="table-col">95%</p>
                                     </div>
                                     <div class="table-row">
-                                        <p class="table-col">№ заказа:</p>
-                                        <p class="table-col">999</p>
+                                        <p class="table-col">Полиэстер:</p>
+                                        <p class="table-col">5%</p>
                                     </div>
                                 </div>
 
@@ -674,8 +676,7 @@
                                     <button class="shop-card-btn">+</button>
                                 </div>
                             </div>
-                            
-                        </li>
+                        </div>
                     </div>
                 </div>
             </div>

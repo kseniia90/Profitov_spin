@@ -358,7 +358,7 @@ $(function () {
   // slider reviews
   var owl = $(".show-carousel").owlCarousel({
     dots: false,
-    loop: true,
+    // loop: true,
     items: 3,
     margin: 18,
   });
@@ -371,174 +371,182 @@ $(function () {
 });
 
 
-
-
-
-
-
-
-
-
-
+var timer = setInterval(function() {
+  
+  var
+    today = new Date(),
+    countdown = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1, 1, 1, 1).getTime(),
+    now = new Date().getTime(),   
+    distance = countdown - now,
+  
+    // Convert the distance into days (not used in this timer, will be in the future), hours, minutes, seconds
+    days = Math.floor(distance / (1000 * 60 * 60 * 24)),
+    hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+    minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  
+  // Update the DOM  
+  $("#hours").html(hours + ":");
+  $("#minutes").html(minutes);
+  
+}, 1000);
 
 
 // wheel start
 
-// const prizes = [
-//   {
-//     text: "1",
-//     color: "#1c1b1c",
-//   },
-//   {
-//     text: "2",
-//     color: "#520b9a",
-//   },
-//   {
-//     text: "3",
-//     color: "#1c1b1c",
-//   },
-//   {
-//     text: "4",
-//     color: "#520b9a",
-//   },
-//   {
-//     text: "5",
-//     color: "#1c1b1c",
-//   },
-//   {
-//     text: "6",
-//     color: "#520b9a",
-//   },
-//   {
-//     text: "7",
-//     color: "#1c1b1c",
-//   },
-//   {
-//     text: "10",
-//     color: "#520b9a",
-//   },
-// ];
+const prizes = [
+  {
+    text: "1",
+    color: "#1c1b1c",
+  },
+  {
+    text: "10",
+    color: "#520b9a",
+  },
+  {
+    text: "7",
+    color: "#1c1b1c",
+  },
+  {
+    text: "6",
+    color: "#520b9a",
+  },
+  {
+    text: "5",
+    color: "#1c1b1c",
+  },
+  {
+    text: "4",
+    color: "#520b9a",
+  },
+  {
+    text: "3",
+    color: "#1c1b1c",
+  },
+  {
+    text: "2",
+    color: "#520b9a",
+  },
+];
 
-// const wheel = document.querySelector(".deal-wheel");
-// const spinner = wheel.querySelector(".spinner");
-// const trigger = wheel.querySelector(".btn-spin");
-// const ticker = wheel.querySelector(".ticker");
+const wheel = document.querySelector(".deal-wheel");
+const spinner = wheel.querySelector(".spinner");
+const trigger = wheel.querySelector(".btn-spin");
+const ticker = wheel.querySelector(".ticker");
 // const reaper = wheel.querySelector(".grim-reaper");
-// const prizeSlice = 360 / prizes.length;
-// const prizeOffset = Math.floor(180 / prizes.length);
-// const spinClass = "is-spinning";
-// const selectedClass = "selected";
-// const spinnerStyles = window.getComputedStyle(spinner);
-// let tickerAnim;
-// let rotation = 0;
-// let currentSlice = 0;
-// let prizeNodes;
+const prizeSlice = 360 / prizes.length;
+const prizeOffset = Math.floor(180 / prizes.length);
+const spinClass = "is-spinning";
+const selectedClass = "selected";
+const spinnerStyles = window.getComputedStyle(spinner);
+let tickerAnim;
+let rotation = 0;
+let currentSlice = 0;
+let prizeNodes;
 
-// const createPrizeNodes = () => {
-//   prizes.forEach(({ text, color }, i) => {
-//     const rotation = prizeSlice * i * -1 - prizeOffset;
-//     spinner.insertAdjacentHTML(
-//       "beforeend",
-//       `<li class="prize" style="--rotate: ${rotation}deg"><span class="text">${text}</span></li>`
-//     );
-//   });
-// };
+const createPrizeNodes = () => {
+    prizes.forEach(({ text, color }, i) => {
+        const rotation = ((prizeSlice * i) * -1) - prizeOffset;
+        spinner.insertAdjacentHTML(
+            "beforeend",
+            `<li class="prize" style="--rotate: ${rotation}deg"><span class="text">${text}</span></li>`
+        );
+    });
+};
 
-// const createConicGradient = () => {
-//   spinner.setAttribute(
-//     "style",
-//     `background: conic-gradient( from -90deg,${prizes
-//       .map(
-//         ({ color }, i) =>
-//           `${color} 0 ${(100 / prizes.length) * (prizes.length - i)}%`
-//       )
-//       .reverse()});`
-//   );
-// };
+const createConicGradient = () => {
+    spinner.setAttribute(
+        "style",`background: conic-gradient( from -90deg,${prizes.map(({ color }, i) => `${color} 0 ${(100 / prizes.length) * (prizes.length - i)}%`)
+            .reverse()
+        });`
+    );
+};
 
-// const setupWheel = () => {
-//   createConicGradient();
-//   createPrizeNodes();
-//   prizeNodes = wheel.querySelectorAll(".prize");
-// };
 
-// const spinertia = (min, max) => {
-//   min = Math.ceil(min);
-//   max = Math.floor(max);
-//   return Math.floor(Math.random() * (max - min + 1)) + min;
-// };
+const setupWheel = () => {
+    createConicGradient();
+    createPrizeNodes();
+    prizeNodes = wheel.querySelectorAll(".prize");
+};
 
-// const runTickerAnimation = () => {
-//   const values = spinnerStyles.transform.split("(")[1].split(")")[0].split(",");
-//   const a = values[0];
-//   const b = values[1];
-//   let rad = Math.atan2(b, a);
+const spinertia = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
-//   if (rad < 0) rad += 2 * Math.PI;
+const runTickerAnimation = () => {
+    const values = spinnerStyles.transform.split("(")[1].split(")")[0].split(",");
+    const a = values[0];
+    const b = values[1];
+    let rad = Math.atan2(b, a);
 
-//   const angle = Math.round(rad * (180 / Math.PI));
-//   const slice = Math.floor(angle / prizeSlice);
+    if (rad < 0) rad += (2 * Math.PI);
 
-//   if (currentSlice !== slice) {
-//     ticker.style.animation = "none";
-//     setTimeout(() => (ticker.style.animation = null), 10);
-//     currentSlice = slice;
-//   }
+    const angle = Math.round(rad * (180 / Math.PI));
+    const slice = Math.floor(angle / prizeSlice);
 
-//   tickerAnim = requestAnimationFrame(runTickerAnimation);
-// };
+    if (currentSlice !== slice) {
+        ticker.style.animation = "none";
+        setTimeout(() => ticker.style.animation = null, 10);
+        currentSlice = slice;
+    }
 
-// const selectPrize = () => {
-//   const selected = Math.floor(rotation / prizeSlice);
-//   prizeNodes[selected].classList.add(selectedClass);
-//   document.getElementById("cupon").innerHTML =
-//     prizeNodes[selected].querySelector(".text").innerHTML;
-//   setTimeout(() => {
-//     document.querySelector(".popup-thanks").classList.add("active");
-//   }, "2000");
-// };
+    tickerAnim = requestAnimationFrame(runTickerAnimation);
+};
 
-// trigger.addEventListener("click", () => {
-//   trigger.disabled = true;
-//   rotation = Math.floor(Math.random() * 360 + spinertia(2000, 5000));
-//   prizeNodes.forEach((prize) => prize.classList.remove(selectedClass));
-//   wheel.classList.add(spinClass);
-//   spinner.style.setProperty("--rotate", rotation);
-//   ticker.style.animation = "none";
-//   runTickerAnimation();
-// });
+const selectPrize = () => {
+    const selected = Math.floor(rotation / prizeSlice);
+    prizeNodes[selected].classList.add(selectedClass);
+    document.getElementById('cupon').innerHTML = prizeNodes[selected].querySelector('.text').innerHTML;
+    setTimeout(() => {
+        document.querySelector('.popup-thanks').classList.add('active');
+    }, "2000");
+};
 
-// spinner.addEventListener("transitionend", () => {
-//   cancelAnimationFrame(tickerAnim);
-//   trigger.disabled = false;
-//   trigger.focus();
-//   rotation %= 360;
-//   selectPrize();
-//   wheel.classList.remove(spinClass);
-//   spinner.style.setProperty("--rotate", rotation);
-// });
+trigger.addEventListener("click", () => {
+    trigger.disabled = true;
+    rotation = Math.floor(Math.random() * 360 + spinertia(2000, 5000));
+    prizeNodes.forEach((prize) => prize.classList.remove(selectedClass));
+    wheel.classList.add(spinClass);
+    spinner.style.setProperty("--rotate", rotation);
+    ticker.style.animation = "none";
+    runTickerAnimation();
+});
 
-// const showPopup = () => {};
+spinner.addEventListener("transitionend", () => {
+    cancelAnimationFrame(tickerAnim);
+    trigger.disabled = false;
+    trigger.focus();
+    rotation %= 360;
+    selectPrize();
+    wheel.classList.remove(spinClass);
+    spinner.style.setProperty("--rotate", rotation);
+});
 
-// if (document.querySelector(".popup-thanks") !== null) {
-//   window.addEventListener("click", function (e) {
-//     if (e.target.closest(".popup__close-thanks")) {
-//       e.preventDefault();
-//       document.querySelector(".popup-thanks").classList.remove("active");
-//       document.body.style.overflow = "auto";
-//     }
+const showPopup = () => {
+    
+}
 
-//     if (
-//       document.querySelector(".popup-thanks.active") &&
-//       !e.target.closest(".popup-content")
-//     ) {
-//       document.querySelector(".popup-thanks").classList.remove("active");
-//       document.body.style.overflow = "auto";
-//     }
-//   });
-// }
 
-// setupWheel();
+if (document.querySelector(".popup-thanks") !== null) {
+
+    window.addEventListener("click", function (e) {
+
+        if (e.target.closest('.popup__close-thanks')) {
+            e.preventDefault();
+            document.querySelector(".popup-thanks").classList.remove("active");
+            document.body.style.overflow = "auto";
+        }
+
+        if (document.querySelector(".popup-thanks.active") && !e.target.closest('.popup-content')) {
+            document.querySelector(".popup-thanks").classList.remove("active");
+            document.body.style.overflow = "auto";
+        }
+    });
+};
+
+setupWheel();
+
 
 //wheel end
 
