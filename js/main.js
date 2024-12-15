@@ -157,10 +157,9 @@ function openProductPopup(event){
     window.addEventListener("click", function (e) {
   
       // if ( document.querySelector(".product_popup.active") &&
-      //   !e.target.closest(".popup-content")
-      // ) {
-      //   popup.classList.remove("active");
-      //   document.body.style.overflow = "auto";
+        // !e.target.closest(".popup-content")) {
+        // popup.classList.remove("active");
+        // document.body.style.overflow = "auto";
       // }
   
       if (e.target.closest(".product_popup .close_popup")) {
@@ -168,7 +167,6 @@ function openProductPopup(event){
         popup.classList.remove("active");
         document.body.style.overflow = "auto";
       }
-  
     });
   }
 }
@@ -195,7 +193,6 @@ function openSuccessPopup(){
         document.querySelector(".success_popup").classList.remove("active");
         document.body.style.overflow = "auto";
       }
-  
     });
   }
 }
@@ -222,7 +219,6 @@ function openErrorPopup(){
         document.querySelector(".error_popup").classList.remove("active");
         document.body.style.overflow = "auto";
       }
-  
     });
   }
 }
@@ -249,7 +245,6 @@ function openErrorBalancePopup(){
         document.querySelector(".error-balance_popup").classList.remove("active");
         document.body.style.overflow = "auto";
       }
-  
     });
   }
 }
@@ -358,9 +353,24 @@ $(function () {
   // slider reviews
   var owl = $(".show-carousel").owlCarousel({
     dots: false,
-    // loop: true,
-    items: 3,
-    margin: 18,
+    loop: false,
+    autoWidth: true,
+    responsive: {
+      0: {
+        items: 1,
+        autoWidth: true,
+        margin: 5,
+      },
+      800: {
+        margin: 18,
+        autoWidth: true,
+      },
+      1350: {
+        items: 3,
+        autoWidth: false,
+      },
+    }
+
   });
   $(".show__next-slide").click(function () {
     owl.trigger("next.owl.carousel");
@@ -378,13 +388,11 @@ var timer = setInterval(function() {
     countdown = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1, 1, 1, 1).getTime(),
     now = new Date().getTime(),   
     distance = countdown - now,
-  
-    // Convert the distance into days (not used in this timer, will be in the future), hours, minutes, seconds
-    days = Math.floor(distance / (1000 * 60 * 60 * 24)),
     hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-    minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    hours = hours < 10 ? "0" + hours : hours,
+    minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+    minutes = minutes < 10 ? "0" + minutes : minutes;
   
-  // Update the DOM  
   $("#hours").html(hours + ":");
   $("#minutes").html(minutes);
   
@@ -432,7 +440,6 @@ const wheel = document.querySelector(".deal-wheel");
 const spinner = wheel.querySelector(".spinner");
 const trigger = wheel.querySelector(".btn-spin");
 const ticker = wheel.querySelector(".ticker");
-// const reaper = wheel.querySelector(".grim-reaper");
 const prizeSlice = 360 / prizes.length;
 const prizeOffset = Math.floor(180 / prizes.length);
 const spinClass = "is-spinning";
@@ -499,7 +506,7 @@ const selectPrize = () => {
     prizeNodes[selected].classList.add(selectedClass);
     document.getElementById('cupon').innerHTML = prizeNodes[selected].querySelector('.text').innerHTML;
     setTimeout(() => {
-        document.querySelector('.popup-thanks').classList.add('active');
+        openCongratulationPopup();
     }, "2000");
 };
 
@@ -523,30 +530,10 @@ spinner.addEventListener("transitionend", () => {
     spinner.style.setProperty("--rotate", rotation);
 });
 
-const showPopup = () => {
-    
+const showPopup = () => {  
 }
 
-
-if (document.querySelector(".popup-thanks") !== null) {
-
-    window.addEventListener("click", function (e) {
-
-        if (e.target.closest('.popup__close-thanks')) {
-            e.preventDefault();
-            document.querySelector(".popup-thanks").classList.remove("active");
-            document.body.style.overflow = "auto";
-        }
-
-        if (document.querySelector(".popup-thanks.active") && !e.target.closest('.popup-content')) {
-            document.querySelector(".popup-thanks").classList.remove("active");
-            document.body.style.overflow = "auto";
-        }
-    });
-};
-
 setupWheel();
-
 
 //wheel end
 

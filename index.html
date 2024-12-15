@@ -25,8 +25,8 @@
                                 <img src="./img/logo.svg" alt="PROFITOV">
                             </a>
                             <div class="header-left">
-                                <button class="custom-button">PP Coins: 100</button>
-                                <button class="custom-button">Кошелек: 1000</button>
+                                <button class="custom-button desktop">PP Coins: 100</button>
+                                <button class="custom-button desktop">Кошелек: 1000</button>
                                 <button class="custom-button btn-icon transparent sing-in-btn">😈</button>
                                 <button class="custom-button btn-icon transparent open-cart">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -46,6 +46,10 @@
                         </div>
                     </div>
                 </header>
+                <div class="container buttons-block">
+                    <button class="custom-button mobile">PP Coins: 100</button>
+                    <button class="custom-button mobile">Кошелек: 1000</button>
+                </div>
 
                 <div class="screen__content container">
                     <div class="screen__left">
@@ -210,26 +214,6 @@
                                 <button class="btn-spin"></button>
                             </figure>
                             <div class="ticker"></div>
-                    
-                            <!-- Thanks popup  success-->
-                    
-                            <div class="popup-thanks">
-                                <div class="popup-dialog">
-                                    <div class="popup-content">
-                                        <div class="popup-body">
-                                            <div class="popup__title">
-                                                <div class="popup__close-thanks"><span class="close-icon">&times;</span></div>
-                                            </div>
-                    
-                                            <div class="popup__text">
-                                                <p><b>Вітаємо!</b><br />
-                                                    Ваша знижка: <span id="cupon"></span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    
                         </div>
                         <button class="custom-button">Ежедневный профит</button>
 
@@ -780,7 +764,7 @@
                         </svg>
                     </div>
                     <div class="popup-body congratulation_popup-body">
-                        <p>Ура! Вы получили 50 коинов!</p>
+                        <p>Ура! Вы получили <span id="cupon"></span> коинов!</p>
                     </div>
                 </div>
             </div>
