@@ -14,6 +14,7 @@ if (document.querySelector(".sing-in_popup") !== null) {
 
     if(e.target.closest(".sing-in-btn")){
       e.preventDefault();
+      document.querySelector(".login_popup").classList.remove("active");
       document.body.style.overflow = "hidden";
       document.querySelector(".sing-in_popup").classList.add("active");
     }
@@ -391,149 +392,155 @@ var timer = setInterval(function() {
     hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
     hours = hours < 10 ? "0" + hours : hours,
     minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-    minutes = minutes < 10 ? "0" + minutes : minutes;
+    minutes = minutes < 10 ? "0" + minutes : minutes,
+    seconds = Math.floor((distance % (1000 * 60)) / 1000),
+    seconds = seconds < 10 ? "0" + seconds : seconds;
   
   $("#hours").html(hours + ":");
-  $("#minutes").html(minutes);
-  
+  $("#minutes").html(minutes + ":"),
+  $("#seconds").html(seconds);
 }, 1000);
 
 
 // wheel start
 
-const prizes = [
-  {
-    text: "1",
-    color: "#1c1b1c",
-  },
-  {
-    text: "10",
-    color: "#520b9a",
-  },
-  {
-    text: "7",
-    color: "#1c1b1c",
-  },
-  {
-    text: "6",
-    color: "#520b9a",
-  },
-  {
-    text: "5",
-    color: "#1c1b1c",
-  },
-  {
-    text: "4",
-    color: "#520b9a",
-  },
-  {
-    text: "3",
-    color: "#1c1b1c",
-  },
-  {
-    text: "2",
-    color: "#520b9a",
-  },
-];
+if(document.querySelector(".deal-wheel") !== null) {
 
-const wheel = document.querySelector(".deal-wheel");
-const spinner = wheel.querySelector(".spinner");
-const trigger = wheel.querySelector(".btn-spin");
-const ticker = wheel.querySelector(".ticker");
-const prizeSlice = 360 / prizes.length;
-const prizeOffset = Math.floor(180 / prizes.length);
-const spinClass = "is-spinning";
-const selectedClass = "selected";
-const spinnerStyles = window.getComputedStyle(spinner);
-let tickerAnim;
-let rotation = 0;
-let currentSlice = 0;
-let prizeNodes;
-
-const createPrizeNodes = () => {
-    prizes.forEach(({ text, color }, i) => {
-        const rotation = ((prizeSlice * i) * -1) - prizeOffset;
-        spinner.insertAdjacentHTML(
-            "beforeend",
-            `<li class="prize" style="--rotate: ${rotation}deg"><span class="text">${text}</span></li>`
-        );
-    });
-};
-
-const createConicGradient = () => {
-    spinner.setAttribute(
-        "style",`background: conic-gradient( from -90deg,${prizes.map(({ color }, i) => `${color} 0 ${(100 / prizes.length) * (prizes.length - i)}%`)
-            .reverse()
-        });`
-    );
-};
-
-
-const setupWheel = () => {
-    createConicGradient();
-    createPrizeNodes();
-    prizeNodes = wheel.querySelectorAll(".prize");
-};
-
-const spinertia = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
-const runTickerAnimation = () => {
-    const values = spinnerStyles.transform.split("(")[1].split(")")[0].split(",");
-    const a = values[0];
-    const b = values[1];
-    let rad = Math.atan2(b, a);
-
-    if (rad < 0) rad += (2 * Math.PI);
-
-    const angle = Math.round(rad * (180 / Math.PI));
-    const slice = Math.floor(angle / prizeSlice);
-
-    if (currentSlice !== slice) {
-        ticker.style.animation = "none";
-        setTimeout(() => ticker.style.animation = null, 10);
-        currentSlice = slice;
-    }
-
-    tickerAnim = requestAnimationFrame(runTickerAnimation);
-};
-
-const selectPrize = () => {
-    const selected = Math.floor(rotation / prizeSlice);
-    prizeNodes[selected].classList.add(selectedClass);
-    document.getElementById('cupon').innerHTML = prizeNodes[selected].querySelector('.text').innerHTML;
-    setTimeout(() => {
-        openCongratulationPopup();
-    }, "2000");
-};
-
-trigger.addEventListener("click", () => {
-    trigger.disabled = true;
-    rotation = Math.floor(Math.random() * 360 + spinertia(2000, 5000));
-    prizeNodes.forEach((prize) => prize.classList.remove(selectedClass));
-    wheel.classList.add(spinClass);
-    spinner.style.setProperty("--rotate", rotation);
-    ticker.style.animation = "none";
-    runTickerAnimation();
-});
-
-spinner.addEventListener("transitionend", () => {
-    cancelAnimationFrame(tickerAnim);
-    trigger.disabled = false;
-    trigger.focus();
-    rotation %= 360;
-    selectPrize();
-    wheel.classList.remove(spinClass);
-    spinner.style.setProperty("--rotate", rotation);
-});
-
-const showPopup = () => {  
+  const prizes = [
+    {
+      text: "1",
+      color: "#1c1b1c",
+    },
+    {
+      text: "10",
+      color: "#520b9a",
+    },
+    {
+      text: "7",
+      color: "#1c1b1c",
+    },
+    {
+      text: "6",
+      color: "#520b9a",
+    },
+    {
+      text: "5",
+      color: "#1c1b1c",
+    },
+    {
+      text: "4",
+      color: "#520b9a",
+    },
+    {
+      text: "3",
+      color: "#1c1b1c",
+    },
+    {
+      text: "2",
+      color: "#520b9a",
+    },
+  ];
+  
+  const wheel = document.querySelector(".deal-wheel");
+  const spinner = wheel.querySelector(".spinner");
+  const trigger = document.getElementById("btn-spin");
+  const ticker = wheel.querySelector(".ticker");
+  const prizeSlice = 360 / prizes.length;
+  const prizeOffset = Math.floor(180 / prizes.length);
+  const spinClass = "is-spinning";
+  const selectedClass = "selected";
+  const spinnerStyles = window.getComputedStyle(spinner);
+  let tickerAnim;
+  let rotation = 0;
+  let currentSlice = 0;
+  let prizeNodes;
+  
+  const createPrizeNodes = () => {
+      prizes.forEach(({ text, color }, i) => {
+          const rotation = ((prizeSlice * i) * -1) - prizeOffset;
+          spinner.insertAdjacentHTML(
+              "beforeend",
+              `<li class="prize" style="--rotate: ${rotation}deg"><span class="text">${text}</span></li>`
+          );
+      });
+  };
+  
+  const createConicGradient = () => {
+      spinner.setAttribute(
+          "style",`background: conic-gradient( from -90deg,${prizes.map(({ color }, i) => `${color} 0 ${(100 / prizes.length) * (prizes.length - i)}%`)
+              .reverse()
+          });`
+      );
+  };
+  
+  
+  const setupWheel = () => {
+      createConicGradient();
+      createPrizeNodes();
+      prizeNodes = wheel.querySelectorAll(".prize");
+  };
+  
+  const spinertia = (min, max) => {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+  
+  const runTickerAnimation = () => {
+      const values = spinnerStyles.transform.split("(")[1].split(")")[0].split(",");
+      const a = values[0];
+      const b = values[1];
+      let rad = Math.atan2(b, a);
+  
+      if (rad < 0) rad += (2 * Math.PI);
+  
+      const angle = Math.round(rad * (180 / Math.PI));
+      const slice = Math.floor(angle / prizeSlice);
+  
+      if (currentSlice !== slice) {
+          ticker.style.animation = "none";
+          setTimeout(() => ticker.style.animation = null, 10);
+          currentSlice = slice;
+      }
+  
+      tickerAnim = requestAnimationFrame(runTickerAnimation);
+  };
+  
+  const selectPrize = () => {
+      const selected = Math.floor(rotation / prizeSlice);
+      prizeNodes[selected].classList.add(selectedClass);
+      document.getElementById('cupon').innerHTML = prizeNodes[selected].querySelector('.text').innerHTML;
+      setTimeout(() => {
+          openCongratulationPopup();
+      }, "1000");
+  };
+  
+  trigger.addEventListener("click", () => {
+      trigger.disabled = true;
+      rotation = Math.floor(Math.random() * 360 + spinertia(2000, 5000));
+      prizeNodes.forEach((prize) => prize.classList.remove(selectedClass));
+      wheel.classList.add(spinClass);
+      spinner.style.setProperty("--rotate", rotation);
+      ticker.style.animation = "none";
+      runTickerAnimation();
+  });
+  
+  spinner.addEventListener("transitionend", () => {
+      cancelAnimationFrame(tickerAnim);
+      trigger.disabled = false;
+      trigger.focus();
+      rotation %= 360;
+      selectPrize();
+      wheel.classList.remove(spinClass);
+      spinner.style.setProperty("--rotate", rotation);
+  });
+  
+  const showPopup = () => {  
+  }
+  
+  setupWheel();
 }
 
-setupWheel();
 
 //wheel end
 
