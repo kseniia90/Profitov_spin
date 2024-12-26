@@ -1252,7 +1252,8 @@ header, footer {
 }
 
 .shop_popup-dialog {
-  max-width: 800px;
+  /* max-width: 800px; */
+  max-width: max-content;
 }
 .shop_popup-header {
   align-self: flex-start;
@@ -1282,7 +1283,8 @@ header, footer {
 }
 
 .cart_popup-dialog {
-  max-width: 800px;
+  /* max-width: 800px; */
+  max-width: max-content;
 }
 .cart_popup .cart-list {
   width: 100%;
@@ -1445,7 +1447,8 @@ header, footer {
 .congratulation_popup-dialog,
 .success-transaction_popup-dialog,
 .error-transaction_popup-dialog {
-  max-width: 800px;
+  /* max-width: 800px; */
+  max-width: max-content;
 }
 .success_popup-content,
 .error_popup-content,
@@ -1460,7 +1463,7 @@ header, footer {
   padding: 20px;
 }
 .product_popup-dialog {
-  max-width: 640px;
+  max-width: max-content;
 }
 
 .product_popup .shop-card {
@@ -1468,6 +1471,8 @@ header, footer {
 }
 @media (max-width: 767px) {
   .product_popup .shop-card {
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
   }
 }
@@ -1481,10 +1486,12 @@ header, footer {
 }
 .product_popup .shop-card-img img {
   width: 100%;
+  min-width: 150px;
 }
 @media (max-width: 767px) {
   .product_popup .shop-card-img {
     padding: 5px;
+    max-width: 150px;
   }
 }
 
@@ -1496,10 +1503,16 @@ header, footer {
   margin-bottom: 25px;
 }
 .shop-card-info .table-row {
-  grid-template-columns: minmax(100px, 150px) 1fr;
+  /* grid-template-columns: minmax(100px, 150px) 1fr; */
+  grid-template-columns: max-content 1fr;
+  gap: 20px;
 }
 .shop-card-info .table-col {
   padding: 0 5px;
+}
+
+.shop-card-info .table-row .table-col:last-child {
+  text-align: right;
 }
 
 .deal-wheel {
